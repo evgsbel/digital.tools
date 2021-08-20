@@ -1,0 +1,110 @@
+.form {
+  flex-grow: 1;
+  max-width: 443px;
+  &__title {
+    margin: 0;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--color-white);
+    &_small {
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+    &_big {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 29px;
+      text-transform: uppercase;
+    }
+    &_thin {
+      font-weight: 400;
+    }
+    &_link {
+      text-decoration: underline;
+      color: var(--color-green);
+    }
+  }
+  &__wrapper {
+    margin-top: 46px;
+    gap: 0 32px;
+  }
+  &__col {
+    flex: 1 1 calc((100% / 2) - 32px);
+    &_left {
+      .form__group {
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+      }
+    }
+    &_right {
+      .form__group {
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  &__input {
+    border: none;
+    border-bottom: 1px dashed #fff;
+    padding-right: 10px;
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+    &::placeholder {
+      color: #fff;
+    }
+    &_textarea {
+      padding-bottom: 17px;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    border-radius: 50%;
+    padding: 12px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 20px 50px rgba(255, 3, 51, 0.5);
+    font-size: 0;
+    color: #fff;
+    background: linear-gradient(90deg, #cb000e 0%, #e70a35 49.48%, #cb000e 100%);
+    svg {
+      width: 30px;
+      height: 35px;
+    }
+  }
+}
+
+// input file
+
+.input-file {
+  position: relative;
+  &__input {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+  &__img {
+    margin-right: 7px;
+    width: 12px;
+    height: 18px;
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-white);
+  }
+}

@@ -1,0 +1,19 @@
+.nav {
+  grid-column: 5/9;
+
+  &__list {
+    display: flex;
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    margin-right: 83px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

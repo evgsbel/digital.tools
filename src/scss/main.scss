@@ -1,0 +1,227 @@
+// @import 'vars'; если используете scss-переменные - подключите сюда vars, но удалите root из _vars.scss
+
+@import "./components/header";
+@import "./components/nav";
+@import "./components/sidebar";
+@import "./components/form";
+
+// HERO
+
+.hero {
+  background-image: url(../img/hero-bg.jpg);
+  &__container {
+    grid-template-rows: 60px calc(100vh - 135px) 42px;
+    .sidebar__logo {
+      display: none;
+    }
+  }
+  &__inner {
+    grid-row: 2/2;
+    padding-top: 123px;
+  }
+  &__info {
+    margin-top: 100px;
+    margin-right: 137px;
+    max-width: 651px;
+    color: var(--color-white);
+  }
+  &__btn {
+    margin-top: 70px;
+  }
+  &__form {
+    color: var(--color-white);
+  }
+  &__partners {
+    grid-column: 1/11;
+    grid-row: 3/3;
+  }
+  &__social {
+    grid-column: 12;
+    grid-row: 3;
+  }
+}
+
+.partners {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.social {
+  color: var(--color-green);
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    transition: color 0.3s ease-in-out;
+    &:not(:last-child) {
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 1px solid var(--color-green);
+    }
+    &:hover {
+      color: #cb000e;
+    }
+  }
+  &__link {
+    font-size: 0;
+  }
+  &__icon {
+    width: 21px;
+    height: 21px;
+    &_fb {
+      width: 12px;
+    }
+  }
+}
+
+// SERVICE
+
+.service {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 300px;
+    z-index: -1;
+    width: 945px;
+    height: 720px;
+    background-image: url("../img/sprite.svg#service-bg");
+    background-position: right 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+  }
+  &__inner {
+    position: relative;
+    padding-top: 100px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 150px;
+      right: -154px;
+      z-index: -1;
+      width: 308px;
+      height: 308px;
+      background-image: url("../img/service-bg-2.png");
+      background-position: right top;
+      background-repeat: no-repeat;
+    }
+  }
+  &__title {
+    margin-bottom: 0;
+  }
+  &__btn {
+    margin-top: 0;
+    margin-left: auto;
+    padding-right: 45px;
+    padding-left: 45px;
+  }
+  &__subtitle {
+    margin-top: 80px;
+    font-size: 20px;
+    line-height: 29px;
+    color: #a1b0c7;
+  }
+  &__items {
+    position: relative;
+    margin-top: 100px;
+    gap: 31px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 98px;
+      height: 3px;
+      background-color: var(--color-green);
+    }
+    &::before {
+      bottom: 40px;
+      left: -98px;
+    }
+    &::after {
+      top: 40px;
+      right: -98px;
+    }
+  }
+  &__article {
+    flex: 0 1 32%;
+    padding: 30px;
+    box-shadow: 0 4px 120px rgba(0, 0, 0, 0.15);
+    background-color: var(--color-white);
+  }
+  &__caption {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 12px;
+    max-width: 78px;
+    max-height: 76px;
+  }
+  &__slogan {
+    position: relative;
+    z-index: -1;
+    margin: -45px auto 0;
+    max-width: 1010px;
+    font-weight: 800;
+    font-size: 150px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #e5e5e5;
+    opacity: 0.3;
+  }
+}
+
+.list {
+  margin-top: 15px;
+  line-height: 28px;
+  &__item {
+    position: relative;
+    padding-left: 15px;
+    &::before {
+      content: ">";
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: 10px;
+      font-size: 16px;
+      line-height: 28px;
+      color: var(--color-green);
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    color: var(--color-green);
+  }
+}
+
+// projects
+
+.projects {
+  background-color: #23252a;
+}
+
+.case {
+  &__wrapper {
+    color: var(--color-white);
+  }
+  &__img {
+    margin-left: auto;
+  }
+  &__info {
+    margin-right: 30px;
+  }
+  &__link {
+    text-decoration: underline;
+    color: var(--color-green);
+  }
+}

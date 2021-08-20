@@ -1,0 +1,30 @@
+.header {
+  display: grid;
+  align-items: center;
+  grid-column: 1/13;
+  grid-column-gap: 30px;
+  grid-row: 1/2;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 30px;
+  &__contacts {
+    grid-column: 10/13;
+    color: #fff;
+  }
+  &__link {
+    padding-left: 30px;
+    background-position: left center;
+    background-size: 24px;
+    background-repeat: no-repeat;
+  }
+  &__email {
+    margin-right: 100px;
+    font-weight: 300;
+    background-image: url("../img/sprite.svg#icon-email");
+  }
+  &__phone {
+    font-family: "Bebas";
+    font-weight: 700;
+    font-size: 25px;
+    background-image: url("../img/sprite.svg#icon-phone");
+  }
+}
