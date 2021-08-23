@@ -1,9 +1,10 @@
 // @import 'vars'; если используете scss-переменные - подключите сюда vars, но удалите root из _vars.scss
-
+@import "mixins";
 @import "./components/header";
 @import "./components/nav";
 @import "./components/sidebar";
 @import "./components/form";
+@import "./components/footer";
 
 // HERO
 
@@ -23,6 +24,9 @@
     margin-top: 100px;
     margin-right: 137px;
     max-width: 651px;
+    color: var(--color-white);
+  }
+  &__subtitle {
     color: var(--color-white);
   }
   &__btn {
@@ -51,6 +55,7 @@
 
 .social {
   color: var(--color-green);
+
   &__list {
     display: flex;
     align-items: center;
@@ -81,39 +86,9 @@
 // SERVICE
 
 .service {
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 300px;
-    z-index: -1;
-    width: 945px;
-    height: 720px;
-    background-image: url("../img/sprite.svg#service-bg");
-    background-position: right 100px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    opacity: 0.2;
-  }
+  @include section-bg(" ../img/sprite.svg#service-bg", 945, 720, 300);
   &__inner {
-    position: relative;
-    padding-top: 100px;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 150px;
-      right: -154px;
-      z-index: -1;
-      width: 308px;
-      height: 308px;
-      background-image: url("../img/service-bg-2.png");
-      background-position: right top;
-      background-repeat: no-repeat;
-    }
-  }
-  &__title {
-    margin-bottom: 0;
+    @include bg-dot-right(1);
   }
   &__btn {
     margin-top: 0;
@@ -125,28 +100,13 @@
     margin-top: 80px;
     font-size: 20px;
     line-height: 29px;
-    color: #a1b0c7;
   }
   &__items {
     position: relative;
+    z-index: 10;
     margin-top: 100px;
     gap: 31px;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 98px;
-      height: 3px;
-      background-color: var(--color-green);
-    }
-    &::before {
-      bottom: 40px;
-      left: -98px;
-    }
-    &::after {
-      top: 40px;
-      right: -98px;
-    }
+    @include greenline;
   }
   &__article {
     flex: 0 1 32%;
@@ -168,16 +128,7 @@
     max-height: 76px;
   }
   &__slogan {
-    position: relative;
-    z-index: -1;
-    margin: -45px auto 0;
-    max-width: 1010px;
-    font-weight: 800;
     font-size: 150px;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #e5e5e5;
-    opacity: 0.3;
   }
 }
 
@@ -208,6 +159,20 @@
 
 .projects {
   background-color: #23252a;
+  &__inner {
+    @include bg-dot-right(0.2);
+    @include bg-dot-left(0.2, -40px);
+  }
+  &__btn {
+    position: relative;
+    z-index: 10;
+    margin-top: 60px;
+    padding: 24px 60px 19px;
+  }
+  &__slogan {
+    font-size: 225px;
+    opacity: 0.03;
+  }
 }
 
 .case {
@@ -216,6 +181,7 @@
   }
   &__img {
     margin-left: auto;
+    @include greenline;
   }
   &__info {
     margin-right: 30px;
@@ -224,4 +190,310 @@
     text-decoration: underline;
     color: var(--color-green);
   }
+  .case__text {
+    margin: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    &_big {
+      margin-top: 40px;
+      font-size: 20px;
+      line-height: 29px;
+    }
+    &_small {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    &_medium {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &_tiny {
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: none;
+    }
+  }
 }
+
+// specialize
+
+.specialize {
+  @include section-bg(" ../img/sprite.svg#specialize-bg", 552, 552, 370);
+  &__inner {
+    @include bg-dot-left(1, -155px);
+    @include bg-dot-right(1);
+  }
+  &__subtitle {
+    max-width: 535px;
+  }
+  &__btn {
+    margin-left: auto;
+    padding: 24px 38px 19px;
+  }
+  &__list {
+    position: relative;
+    z-index: 20;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    gap: 30px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex: 1 1 calc((100% / 3) - 60px);
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 235px;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--color-green);
+
+    &_01 {
+      background-image: url("../img/spec-01.jpg");
+    }
+    &_02 {
+      background-image: url("../img/spec-02.jpg");
+    }
+    &_03 {
+      background-image: url("../img/spec-03.jpg");
+    }
+    &_04 {
+      background-image: url("../img/spec-04.jpg");
+    }
+    &_05 {
+      background-image: url("../img/spec-05.jpg");
+    }
+    &_06 {
+      background-image: url("../img/spec-06.jpg");
+    }
+  }
+  &__caption {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    background-color: var(--color-green);
+  }
+  &__slogan {
+    opacity: 0.3;
+  }
+}
+
+// red round
+
+.red-round {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(255, 3, 51, 0.35);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  background: linear-gradient(90deg, #cb000e 0%, #e70a35 49.48%, #cb000e 100%);
+}
+
+// clients
+
+.clients {
+  background-color: #23252a;
+  &__inner {
+    @include bg-dot-left(0.2, -40px);
+    @include bg-dot-right(0.2);
+  }
+  &__subtitle {
+    max-width: 535px;
+    color: var(--color-white);
+  }
+  &__btn {
+    margin-left: auto;
+    padding: 24px 62px 19px;
+  }
+  &__list {
+    z-index: 10;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 83px;
+    gap: 127px 0;
+  }
+  &__item {
+    flex-basis: 24%;
+  }
+  &__slogan {
+    opacity: 0.03;
+  }
+}
+
+// success
+
+.success {
+  background-image: url("../img/success-bg.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color: #23252a;
+  &__inner {
+    @include bg-dot-left(0.2, -30px);
+    @include bg-dot-right(0.2);
+    z-index: 10;
+  }
+  &__slogan {
+    top: 0;
+    opacity: 0.05;
+  }
+  &__wrapper {
+    align-items: stretch;
+    margin-top: 60px;
+  }
+  &__list {
+    max-width: 320px;
+    color: var(--color-white);
+  }
+  &__item {
+    svg {
+      margin-right: 20px;
+      max-width: 42px;
+      max-height: 42px;
+      color: var(--color-green);
+    }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .success__number {
+    margin: 0;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .success__info {
+    margin: 0;
+    line-height: 28px;
+  }
+  .form {
+    margin-left: auto;
+  }
+  .btn {
+    margin-top: 50px;
+  }
+}
+
+// team
+
+.team {
+  &__inner {
+    z-index: 10;
+    @include bg-dot-left(1, -160px);
+    @include bg-dot-right(1);
+  }
+  &__title {
+    margin: 0;
+  }
+  &__btn {
+    margin-left: auto;
+  }
+  &__subtitle {
+    margin-top: 30px;
+  }
+  &__list {
+    @include greenline;
+    position: relative;
+    z-index: 10;
+    margin-top: 40px;
+    gap: 30px;
+    &::before {
+      top: 250px;
+    }
+  }
+  &__item {
+    flex: 1 1 24%;
+  }
+  &__img {
+    filter: drop-shadow(0px 4px 120px rgba(0, 0, 0, 0.15));
+  }
+  &__name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  &__info {
+    line-height: 24px;
+  }
+  &__slogan {
+    top: 220px;
+    left: 250px;
+  }
+}
+
+// blog
+
+.blog {
+  @include section-bg(" ../img/sprite.svg#blog-bg", 512, 512, 370);
+  &__inner {
+    z-index: 10;
+    @include bg-dot-left(1, -160px);
+    @include bg-dot-right(1);
+  }
+  &__btn {
+    margin-left: auto;
+    padding-right: 56px;
+    padding-left: 56px;
+  }
+  &__list {
+    margin-top: 60px;
+    gap: 30px;
+  }
+  &__item {
+    z-index: 20;
+    position: relative;
+    flex: 1 1 calc((100% / 3) - 60px);
+    padding: 230px 40px 20px;
+    min-height: 500px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 52.6%);
+    background-size: cover;
+    filter: drop-shadow(0px 4px 120px rgba(0, 0, 0, 0.15));
+  }
+  &__caption {
+    font-size: 30px;
+    line-height: 50px;
+  }
+  &__icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0.5;
+    svg {
+      width: 33px;
+      height: 27px;
+    }
+  }
+  &__icon-arrow {
+    padding: 12px 9px 12px 12px;
+  }
+}
+
+.search {
+  position: absolute;
+  right: 40px;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px dashed var(--color-white);
+  border-radius: 50%;
+  &__icon {
+    width: 32px;
+    height: 24px;
+  }
+}
+
+

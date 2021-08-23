@@ -1,0 +1,68 @@
+@mixin greenline {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 98px;
+    height: 3px;
+    background-color: var(--color-green);
+  }
+  &::before {
+    bottom: 40px;
+    left: -98px;
+  }
+  &::after {
+    top: 40px;
+    right: -98px;
+  }
+}
+
+@mixin bg-dot-right($opacity) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 150px;
+    right: -154px;
+    width: 308px;
+    height: 308px;
+    background-image: url("../img/bg-dot-right.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    opacity: $opacity;
+  }
+}
+
+@mixin bg-dot-left($opacity, $left) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: $left;
+    width: 628px;
+    height: 308px;
+    background-image: url("../img/bg-dot-3.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    opacity: $opacity;
+  }
+}
+
+@mixin section-bg($url, $width, $height, $right) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: #{$right}px;
+    z-index: -1;
+    width: #{$width}px;
+    height: #{$height}px;
+    background-image: url(#{$url});
+    background-position: right 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.03;
+  }
+}

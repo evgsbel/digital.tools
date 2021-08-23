@@ -67,7 +67,8 @@ ul {
 }
 
 .section {
-  overflow-y: auto;
+  position: relative;
+  overflow: hidden;
   height: 100vh;
 }
 
@@ -155,9 +156,14 @@ ul {
   font-weight: 350;
   font-size: 20px;
   line-height: 29px;
+  color: var(--color-grey);
+  &_upper {
+    text-transform: uppercase;
+  }
 }
 
 .btn {
+  z-index: 10;
   padding: 24px 62px;
   border-radius: 5px;
   box-shadow: 0 20px 50px rgba(255, 3, 51, 0.5);
@@ -171,4 +177,19 @@ ul {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
+}
+
+.slogan {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  font-weight: 800;
+  font-size: 170px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  color: #e5e5e5;
+  opacity: 0.3;
 }

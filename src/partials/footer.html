@@ -1,3 +1,115 @@
-<footer class="footer">
-  <div class="container"></div>
+<footer class="section footer logo-white">
+  <div class="container hero__container">
+    <div class="footer__top">
+      <a href="" class="logo footer__logo">
+        <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
+        <span class="logo__text">Digital.Tools</span>
+      </a>
+      <div class="footer__contacts">
+        <a href="mailto:hello@digital.tools" class="footer__link footer__email">hello@digital.tools</a>
+        <a href="tel:84952408341" class="footer__link footer__phone">8 (495) 240-83-41</a>
+      </div>
+    </div>
+    @include('sidebar.html')
+    <div class="inner hero__inner">
+      <div class="flex">
+        <div class="footer__info">
+          <h1 class="title-h1 hero__title">Digital.Tools</h1>
+          <p class="subtitle hero__subtitle">Агенство интернет-маркетинга для роста вашего бизнеса</p>
+          <p class="subtitle hero__subtitle">Привлекаем трафик и конверсии на сайты наших клиентов с 2004 года</p>
+          <button class="btn hero__btn btn-reset">Заказать услугу</button>
+          <nav class="footer__nav footer-nav flex">
+            <div class="footer-nav__wrapper">
+              <p class="footer-nav__caption">Услуги</p>
+              <ul class="footer-nav__list">
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">SEO</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">SERM</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Разработка сайтов</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-nav__wrapper">
+              <ul class="footer-nav__list">
+                <p class="footer-nav__caption">Примеры отраслевых решений</p>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Финансовые услуги</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Страхование</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Девелопмент</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Медицина</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Интернет-магазин</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Телеком</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Производство</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">СМИ</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Информационные порталы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-nav__wrapper">
+              <ul class="footer-nav__list">
+                <p class="footer-nav__caption">О нас</p>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Наша команда</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Наши клиенты</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a href="" class="footer-nav__link">Карьера</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="footer__map">
+          <p class="footer__caption">Digital.Tools</p>
+          <address class="footer__address">г. Москва, ул. Новодмитровская д.2, к.2, БЦ “Савеловский Сити”, Башня
+            “Davis”, 9 этаж
+          </address>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copy">
+      &copy; 2020 Digital.Tools <a href="" class="footer__copy_link">Политика конфиденциальности</a>
+    </div>
+    <div class="social footer__social">
+      <ul class="social__list">
+        <li class="social__item">
+          <a href="" class="social__link">
+            <svg class="social__icon social__icon_fb">
+              <use xlink:href="img/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="" class="social__link">
+            <svg class="social__icon social__icon_vk">
+              <use xlink:href="img/sprite.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  @include("search.html")
 </footer>
