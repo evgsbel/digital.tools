@@ -14,9 +14,118 @@
 </head>
 
 <body>
-<main class="main">
+<!-- preloader-->
+<style>
+  .preloader {
+    display: block;
+    position: relative;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid #fff;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 5000;
+  }
+  .preloader__wrp {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    background-color: #000;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 
-  <section class="section hero logo-white">
+  .preloader::before,
+  .preloader::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 4px solid transparent;
+  }
+  .preloader::before {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-top-color: #cb000e;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3.5s linear infinite;
+  }
+  .preloader::after {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-top-color: #009f90;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.75s linear infinite;
+  }
+  -webkit-@keyframes spin {
+            -webkit-from {
+              -webkit-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+            -webkit-to {
+              -webkit-transform: rotate(360deg);
+              -ms-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+          }
+
+  @-webkit-keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+</style>
+<div class="preloader__wrp">
+  <div class="preloader"></div>
+</div>
+<!-- /preloader-->
+
+<main class="main">
+  <div id="pinContainer">
+  <section id="one" class="section hero logo-white">
+  <div class="canvas demo">
+  <div class="content">
+      <canvas class="demo-canvas"></canvas>
+  </div>
+</div>
+
   <div class="container hero__container">
     <header class="header">
   <a href="" class="logo header__logo">
@@ -188,7 +297,7 @@
 
 </section>
 
-  <section class="section service">
+  <section id="two" class="section service panel">
   <div class="container">
     <sidebar class="sidebar">
   <a href="" class="logo sidebar__logo">
@@ -284,7 +393,13 @@
   </div>
 </section>
 
-  <section class="section projects logo-white">
+  <section id="three" class="section projects logo-white panel">
+  <div class="canvas demo">
+  <div class="content">
+      <canvas class="demo-canvas"></canvas>
+  </div>
+</div>
+
   <div class="container">
     <sidebar class="sidebar">
   <a href="" class="logo sidebar__logo">
@@ -323,7 +438,7 @@
 </sidebar>
 
     <div class="inner projects__inner">
-      <h2 class="title-h2 title-h2_white">Услуги</h2>
+      <h2 class="title-h2 title-h2_white">Проекты</h2>
       <div class="projects__slider case">
         <div class="case__wrapper flex">
           <div class="case__info">
@@ -352,7 +467,7 @@
   </div>
 </section>
 
-  <section class="section specialize">
+  <section class="section specialize panel">
   <div class="container">
     <sidebar class="sidebar">
   <a href="" class="logo sidebar__logo">
@@ -398,7 +513,7 @@
       </div>
       <ul class="specialize__list flex">
         <li class="specialize__item specialize__item_01">
-          <h3 class="title-h3 specialize__caption">E-commerce lorem</h3>
+          <h3 class="title-h3 specialize__caption">E-commerce</h3>
           <div class="red-round specialize__count">19</div>
         </li>
         <li class="specialize__item specialize__item_02">
@@ -427,7 +542,13 @@
   </div>
 </section>
 
-  <section class="section clients logo-white">
+  <section class="section clients logo-white panel">
+  <div class="canvas demo">
+  <div class="content">
+      <canvas class="demo-canvas"></canvas>
+  </div>
+</div>
+
   <div class="container">
     <sidebar class="sidebar">
   <a href="" class="logo sidebar__logo">
@@ -466,7 +587,7 @@
 </sidebar>
 
     <div class="inner clients__inner">
-      <h2 class="title-h2 title-h2_white">Клиенты</h2>
+      <h2 class="title-h2 title-h2_white clients__title">Клиенты</h2>
       <div class="flex">
         <p class="subtitle clients__subtitle">Не имеет значение размер клиента, мы посвящаем себя в полной мере каждому из них.</p>
         <button class="btn btn-reset clients__btn">Ждем вас!</button>
@@ -514,7 +635,13 @@
   </div>
 </section>
 
-  <section class="section success logo-white">
+  <section class="section success logo-white panel">
+  <div class="canvas demo">
+  <div class="content">
+      <canvas class="demo-canvas"></canvas>
+  </div>
+</div>
+
   <div class="container">
     <sidebar class="sidebar">
   <a href="" class="logo sidebar__logo">
@@ -638,7 +765,7 @@
   </div>
 </section>
 
-  <section class="section team">
+  <section class="section team panel">
   <div class="container">
     <sidebar class="sidebar">
   <a href="" class="logo sidebar__logo">
@@ -710,7 +837,7 @@
   </div>
 </section>
 
-  <section class="section blog">
+  <section class="section blog panel">
   <div class="container">
     <sidebar class="sidebar">
   <a href="" class="logo sidebar__logo">
@@ -800,7 +927,13 @@
   </div>
 </section>
 
-  <footer class="section footer logo-white">
+  <footer class="section footer logo-white panel">
+  <div class="canvas demo">
+  <div class="content">
+      <canvas class="demo-canvas"></canvas>
+  </div>
+</div>
+
   <div class="container hero__container">
     <div class="footer__top">
       <a href="" class="logo footer__logo">
@@ -956,10 +1089,7 @@
 
 </footer>
 
-  <!--<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>-->
-<!--<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>-->
-<!--<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>-->
-
+  </div>
 </main>
 
   <script src="js/vendor.js"></script>

@@ -274,6 +274,9 @@
     line-height: 19px;
     text-transform: uppercase; }
 
+.canvas {
+  position: absolute; }
+
 .hero {
   background-image: url(../img/hero-bg.jpg); }
   .hero__container {

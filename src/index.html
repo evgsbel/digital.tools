@@ -14,8 +14,9 @@
 </head>
 
 <body>
+@include('partials/preloader.html')
 <main class="main">
-
+  <div id="pinContainer">
   @include('partials/sections/hero.html')
   @include('partials/sections/service.html')
   @include('partials/sections/projects.html')
@@ -25,7 +26,7 @@
   @include('partials/sections/team.html')
   @include('partials/sections/blog.html')
   @include('partials/footer.html')
-  @include('partials/scripts.html')
+  </div>
 </main>
 
   <script src="js/vendor.js"></script>
