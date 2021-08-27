@@ -1,62 +1,53 @@
 <!-- preloader-->
 <style>
   .preloader {
-    display: block;
     position: relative;
+    z-index: 300;
+    display: block;
     width: 125px;
     height: 125px;
-    border-radius: 50%;
     border: 4px solid transparent;
     border-top: 4px solid #fff;
-    -webkit-animation: spin 2s linear infinite;
+    border-radius: 50%;
     animation: spin 2s linear infinite;
-    z-index: 5000;
+    -webkit-animation: spin 2s linear infinite;
   }
+
   .preloader__wrp {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 4;
-    background-color: #000;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    left: 0;
+    z-index: 200;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
   }
-
   .preloader::before,
   .preloader::after {
-    content: "";
+    content: '';
     position: absolute;
-    border-radius: 50%;
     border: 4px solid transparent;
+    border-radius: 50%;
   }
   .preloader::before {
     top: 5px;
-    left: 5px;
     right: 5px;
     bottom: 5px;
+    left: 5px;
     border-top-color: #cb000e;
     -webkit-animation: spin 3s linear infinite;
     animation: spin 3.5s linear infinite;
   }
   .preloader::after {
     top: 15px;
-    left: 15px;
     right: 15px;
     bottom: 15px;
+    left: 15px;
     border-top-color: #009f90;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.75s linear infinite;

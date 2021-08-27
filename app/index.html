@@ -17,62 +17,53 @@
 <!-- preloader-->
 <style>
   .preloader {
-    display: block;
     position: relative;
+    z-index: 300;
+    display: block;
     width: 125px;
     height: 125px;
-    border-radius: 50%;
     border: 4px solid transparent;
     border-top: 4px solid #fff;
-    -webkit-animation: spin 2s linear infinite;
+    border-radius: 50%;
     animation: spin 2s linear infinite;
-    z-index: 5000;
+    -webkit-animation: spin 2s linear infinite;
   }
+
   .preloader__wrp {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 4;
-    background-color: #000;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    left: 0;
+    z-index: 200;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
   }
-
   .preloader::before,
   .preloader::after {
-    content: "";
+    content: '';
     position: absolute;
-    border-radius: 50%;
     border: 4px solid transparent;
+    border-radius: 50%;
   }
   .preloader::before {
     top: 5px;
-    left: 5px;
     right: 5px;
     bottom: 5px;
+    left: 5px;
     border-top-color: #cb000e;
     -webkit-animation: spin 3s linear infinite;
     animation: spin 3.5s linear infinite;
   }
   .preloader::after {
     top: 15px;
-    left: 15px;
     right: 15px;
     bottom: 15px;
+    left: 15px;
     border-top-color: #009f90;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.75s linear infinite;
@@ -118,16 +109,7 @@
 <!-- /preloader-->
 
 <main class="main">
-  <div id="pinContainer">
-  <section id="one" class="section hero logo-white">
-  <div class="canvas demo">
-  <div class="content">
-      <canvas class="demo-canvas"></canvas>
-  </div>
-</div>
-
-  <div class="container hero__container">
-    <header class="header">
+  <header class="header" color="blue">
   <a href="" class="logo header__logo">
     <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
     <span class="logo__text">Digital.Tools</span>
@@ -154,11 +136,19 @@
   </div>
 </header>
 
+  <section id="one" class="section hero" data-color="white">
+  <div class="canvas demo">
+  <div class="content">
+      <canvas class="demo-canvas"></canvas>
+  </div>
+</div>
+
+  <div class="container hero__container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -198,7 +188,7 @@
           <p class="subtitle hero__subtitle">Привлекаем трафик и конверсии на сайты наших клиентов с 2004 года</p>
           <button class="btn hero__btn btn-reset">Заказать услугу</button>
         </div>
-        <form action="" class="form hero__form" method="post" autocomplete="on">
+        <form action="" class="form" method="post" autocomplete="on">
   <p class="form__title form__title_small">У нас есть идея для Вашего проекта?</p>
   <p class="form__title form__title_big">Давайте обсудим и сделаем вместе!</p>
   <p class="form__title form__title_thin">Расскажите о своем проекте или
@@ -297,13 +287,13 @@
 
 </section>
 
-  <section id="two" class="section service panel">
+  <section id="two" class="section service panel" data-color="black">
   <div class="container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -393,7 +383,7 @@
   </div>
 </section>
 
-  <section id="three" class="section projects logo-white panel">
+  <section id="three" class="section projects" data-color="white">
   <div class="canvas demo">
   <div class="content">
       <canvas class="demo-canvas"></canvas>
@@ -402,10 +392,10 @@
 
   <div class="container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -438,7 +428,7 @@
 </sidebar>
 
     <div class="inner projects__inner">
-      <h2 class="title-h2 title-h2_white">Проекты</h2>
+      <h2 class="title-h2 title-h2_white projects__title">Проекты</h2>
       <div class="projects__slider case">
         <div class="case__wrapper flex">
           <div class="case__info">
@@ -467,13 +457,13 @@
   </div>
 </section>
 
-  <section class="section specialize panel">
+  <section id="four" class="section specialize panel">
   <div class="container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -542,7 +532,7 @@
   </div>
 </section>
 
-  <section class="section clients logo-white panel">
+  <section id="five" class="section clients logo-white panel">
   <div class="canvas demo">
   <div class="content">
       <canvas class="demo-canvas"></canvas>
@@ -551,10 +541,10 @@
 
   <div class="container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -635,7 +625,7 @@
   </div>
 </section>
 
-  <section class="section success logo-white panel">
+  <section id="six" class="section success logo-white panel">
   <div class="canvas demo">
   <div class="content">
       <canvas class="demo-canvas"></canvas>
@@ -644,10 +634,10 @@
 
   <div class="container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -682,8 +672,8 @@
     <p class="slogan success__slogan">Максимальный</p>
     <div class="inner success__inner">
       <h2 class="title-h2 title-h2_white success__title">Успех</h2>
-      <p class="subtitle subtitle_upper">Мы добиваемся успеха</p>
-      <p class="subtitle">Почему бизнесу важно продвижение в Интернете?</p>
+      <p class="subtitle success__subtitle subtitle_upper">Мы добиваемся успеха</p>
+      <p class="subtitle success__subtitle">Почему бизнесу важно продвижение в Интернете?</p>
       <div class="flex success__wrapper">
         <ul class="success__list">
           <li class="success__item">
@@ -714,7 +704,7 @@
             <p class="success__info">среднегодовой рост бизнеса в интернете с 2019 по 2024 год</p>
           </li>
         </ul>
-        <form action="" class="form hero__form" method="post" autocomplete="on">
+        <form action="" class="form" method="post" autocomplete="on">
   <p class="form__title form__title_small">У нас есть идея для Вашего проекта?</p>
   <p class="form__title form__title_big">Давайте обсудим и сделаем вместе!</p>
   <p class="form__title form__title_thin">Расскажите о своем проекте или
@@ -765,13 +755,13 @@
   </div>
 </section>
 
-  <section class="section team panel">
+  <section id="seven" class="section team panel">
   <div class="container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -837,13 +827,13 @@
   </div>
 </section>
 
-  <section class="section blog panel">
+  <section id="eight" class="section blog panel">
   <div class="container">
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -876,9 +866,9 @@
 </sidebar>
 
     <div class="inner blog__inner">
-      <h2 class="title-h2">Блог</h2>
+      <h2 class="title-h2 blog__title">Блог</h2>
       <div class="flex">
-        <p class="subtitle subtitle_upper">из нашего блога //обучение, рост, экспертиза</p>
+        <p class="subtitle blog__subtitle subtitle_upper">из нашего блога //обучение, рост, экспертиза</p>
         <button class="btn btn-reset blog__btn">Больше блогов</button>
       </div>
       <div class="flex blog__list">
@@ -927,7 +917,7 @@
   </div>
 </section>
 
-  <footer class="section footer logo-white panel">
+  <footer id="nine" class="section footer logo-white panel">
   <div class="canvas demo">
   <div class="content">
       <canvas class="demo-canvas"></canvas>
@@ -935,21 +925,11 @@
 </div>
 
   <div class="container hero__container">
-    <div class="footer__top">
-      <a href="" class="logo footer__logo">
-        <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-        <span class="logo__text">Digital.Tools</span>
-      </a>
-      <div class="footer__contacts">
-        <a href="mailto:hello@digital.tools" class="footer__link footer__email">hello@digital.tools</a>
-        <a href="tel:84952408341" class="footer__link footer__phone">8 (495) 240-83-41</a>
-      </div>
-    </div>
     <sidebar class="sidebar">
-  <a href="" class="logo sidebar__logo">
-    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
-    <span class="logo__text">Digital.Tools</span>
-  </a>
+<!--  <a href="" class="logo sidebar__logo">-->
+<!--    <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">-->
+<!--    <span class="logo__text">Digital.Tools</span>-->
+<!--  </a>-->
   <div class="pagination sidebar__pagination">
     <div class="pagination__step">
       <div class="pagination__icon"></div>
@@ -984,10 +964,10 @@
     <div class="inner hero__inner">
       <div class="flex">
         <div class="footer__info">
-          <h1 class="title-h1 hero__title">Digital.Tools</h1>
-          <p class="subtitle hero__subtitle">Агенство интернет-маркетинга для роста вашего бизнеса</p>
-          <p class="subtitle hero__subtitle">Привлекаем трафик и конверсии на сайты наших клиентов с 2004 года</p>
-          <button class="btn hero__btn btn-reset">Заказать услугу</button>
+          <h1 class="title-h1 footer__title">Digital.Tools</h1>
+          <p class="subtitle footer__subtitle">Агенство интернет-маркетинга для роста вашего бизнеса</p>
+          <p class="subtitle footer__subtitle">Привлекаем трафик и конверсии на сайты наших клиентов с 2004 года</p>
+          <button class="btn footer__btn btn-reset">Заказать услугу</button>
           <nav class="footer__nav footer-nav flex">
             <div class="footer-nav__wrapper">
               <p class="footer-nav__caption">Услуги</p>
@@ -1089,7 +1069,6 @@
 
 </footer>
 
-  </div>
 </main>
 
   <script src="js/vendor.js"></script>

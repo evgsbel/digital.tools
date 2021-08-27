@@ -1,19 +1,22 @@
 .nav {
   grid-column: 5/9;
-
   &__list {
     display: flex;
-    color: #fff;
     font-weight: 800;
     font-size: 13px;
     text-transform: uppercase;
+    color: inherit;
   }
-
   &__item {
     margin-right: 83px;
-
     &:last-child {
       margin-right: 0;
+    }
+  }
+  &__link {
+    transition: color .5s ease-in-out;
+    &:hover {
+      color: var(--color-green);
     }
   }
 }

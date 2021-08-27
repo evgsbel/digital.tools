@@ -629,7 +629,7 @@
 		"no-invalid-double-slash-comments": true,
 		"no-missing-end-of-source-newline": null,
 		"no-unknown-animations": true,
-		"number-leading-zero": "always",
+		"number-leading-zero": "never",
 		"number-max-precision": 5,
 		"number-no-trailing-zeros": true,
 		"property-blacklist": null,
@@ -693,7 +693,7 @@
 		"selector-type-no-unknown": true,
 		"shorthand-property-no-redundant-values": true,
 		"string-no-newline": true,
-		"string-quotes": "double",
+		"string-quotes": "single",
 		"time-min-milliseconds": 10,
 		"unit-blacklist": [
 			"ch",
