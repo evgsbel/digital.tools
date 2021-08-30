@@ -130,8 +130,7 @@ ul {
   overflow: hidden;
   height: 120%;
   background-color: #fff;
-  scroll-snap-align: start;
-  transition: position .3s linear; }
+  transition: transform .3s linear; }
 
 .container {
   position: relative;

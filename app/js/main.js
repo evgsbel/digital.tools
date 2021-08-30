@@ -234,13 +234,8 @@ $(function () {
     }, {
       x: 0,
       opacity: 1
-    }, 0.4).staggerFromTo('.hero__form', .8, {
-      x: 30,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, 0.8).staggerFromTo('.partners__item', .3, {
+    }, 0.4) // .staggerFromTo('.hero__form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
+    .staggerFromTo('.partners__item', .3, {
       x: -10,
       opacity: 0
     }, {
@@ -278,31 +273,11 @@ $(function () {
     }, {
       opacity: 1,
       y: 0
-    }, .5).staggerFromTo('.case__link', .5, {
-      y: -5,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, 3).staggerFromTo('.case__img', .8, {
-      x: 30,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, 1).staggerFromTo('.case li', .7, {
-      x: 30,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, .3).staggerFromTo('.case p', .7, {
-      x: -10,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, .3);
+    }, .5); // .staggerFromTo('.case__link', .5, {y:-5,opacity:0}, {y:0,opacity:1}, 3)
+    // .staggerFromTo('.case__img', .8, {x:30,opacity:0}, {x:0,opacity:1}, 1)
+    // .staggerFromTo('.case li', .7, {x:30,opacity:0}, {x:0,opacity:1}, .3)
+    // .staggerFromTo('.case p', .7, {x:-10,opacity:0}, {x:0,opacity:1}, .3)
+
     secClients.fromTo('.clients__title', .5, {
       y: 30,
       opacity: 0
@@ -354,7 +329,13 @@ $(function () {
       rotationY: 0,
       x: 0,
       opacity: 1
-    }, .5);
+    }, .5).staggerFromTo('.specialize__img', .5, {
+      scale: .5,
+      opacity: 0
+    }, {
+      scale: 1,
+      opacity: 1
+    });
     secSuccess.fromTo('.success__title', .5, {
       y: 30,
       opacity: 0
@@ -367,13 +348,8 @@ $(function () {
     }, {
       y: 0,
       opacity: 1
-    }, .6).staggerFromTo('.hero__form', .8, {
-      x: 30,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, 0.8).staggerFromTo('.success__item', .5, {
+    }, .6) // .staggerFromTo('.hero__form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
+    .staggerFromTo('.success__item', .5, {
       y: 30,
       opacity: 0
     }, {
@@ -404,25 +380,25 @@ $(function () {
     }, {
       opacity: 1,
       y: 0
-    }, .7).staggerFromTo('.team__img', .6, {
+    }, .7).staggerFromTo('.team__img', .2, {
       y: 30,
       opacity: 0
     }, {
       y: 0,
       opacity: 1
-    }, .4).staggerFromTo('.team__name', .5, {
+    }, .2).staggerFromTo('.team__name', .2, {
       y: 30,
       opacity: 0
     }, {
       y: 0,
       opacity: 1
-    }, .3).staggerFromTo('.team__info', .4, {
+    }, .1).staggerFromTo('.team__info', .2, {
       y: 30,
       opacity: 0
     }, {
       y: 0,
       opacity: 1
-    }, .2);
+    }, .1);
     secBlog.fromTo('.blog__title', .5, {
       y: 30,
       opacity: 0
@@ -499,48 +475,48 @@ $(function () {
     }, .1);
     var sceneHero = new ScrollMagic.Scene({
       triggerElement: ".hero",
-      triggerHook: 0 // reverse: false,
-
+      triggerHook: 0,
+      reverse: true
     }).setTween(secHero).addTo(controller);
     var sceneService = new ScrollMagic.Scene({
       triggerElement: ".service",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secService).addTo(controller);
     var sceneProject = new ScrollMagic.Scene({
       triggerElement: ".projects",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secProject).addTo(controller);
     var sceneClients = new ScrollMagic.Scene({
       triggerElement: ".clients",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secClients).addTo(controller);
     var sceneSpecialize = new ScrollMagic.Scene({
       triggerElement: ".specialize",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secSpecialize).addTo(controller);
     var sceneSuccess = new ScrollMagic.Scene({
       triggerElement: ".success",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secSuccess).addTo(controller);
     var sceneTeam = new ScrollMagic.Scene({
       triggerElement: ".team",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secTeam).addTo(controller);
     var sceneBlog = new ScrollMagic.Scene({
-      triggerElement: ".team",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerElement: ".blog",
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secBlog).addTo(controller);
     var sceneFooter = new ScrollMagic.Scene({
-      triggerElement: ".team",
-      triggerHook: 0.6 // reverse: false,
-
+      triggerElement: ".footer",
+      triggerHook: 0.6,
+      reverse: true
     }).setTween(secFooter).addTo(controller);
   });
 }); // // Init ScrollMagic
@@ -571,32 +547,11 @@ $(function () {
 //
 // });
 //
-//sections
-
-$(function () {
-  var slidesSection = new ScrollMagic.Controller({
-    globalSceneOptions: {
-      triggerHook: 'onLeave'
-    }
-  });
-  var slides = document.querySelectorAll(".section");
-
-  for (var i = 0; i < slides.length; i++) {
-    new ScrollMagic.Scene({
-      triggerElement: slides[i]
-    }).setPin(slides[i], {
-      pushFollowers: false
-    }).addIndicators({
-      colorStart: "red",
-      colorEnd: "rgba(255,255,255,0.5)",
-      colorTrigger: "blue"
-    }).addTo(slidesSection);
-  }
-}); // header
+// header
 
 var headerController = new ScrollMagic.Controller({
   globalSceneOptions: {
-    duration: '95%',
+    duration: '100%',
     triggerHook: 'onLeave'
   }
 });
@@ -619,7 +574,18 @@ new ScrollMagic.Scene({
 new ScrollMagic.Scene({
   triggerElement: "#nine"
 }).setClassToggle(".header", "header_white") // add class toggle
-.addTo(headerController);
+.addTo(headerController); // fullpage
+
+$('#fullpage').fullpage({
+  scrollingSpeed: 1000
+});
+"use strict";
+
+$(document).ready(function () {
+  $('.projects__slider').owlCarousel({
+    items: 1
+  });
+});
 /**
  * название функции
  *

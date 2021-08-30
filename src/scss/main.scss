@@ -176,12 +176,13 @@
   &__btn {
     position: relative;
     z-index: 10;
-    margin-top: 60px;
+    margin-top: 140px;
     padding: 24px 60px 19px;
+    box-shadow: none;
   }
   &__slogan {
     font-size: 225px;
-    opacity: 0.03;
+    opacity: .03;
   }
 }
 
@@ -191,7 +192,7 @@
   }
   &__img {
     margin-left: auto;
-    @include greenline;
+    //@include greenline;
   }
   &__info {
     margin-right: 30px;
@@ -258,26 +259,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-color: var(--color-green);
-
-    &_01 {
-      background-image: url("../img/spec-01.jpg");
-    }
-    &_02 {
-      background-image: url("../img/spec-02.jpg");
-    }
-    &_03 {
-      background-image: url("../img/spec-03.jpg");
-    }
-    &_04 {
-      background-image: url("../img/spec-04.jpg");
-    }
-    &_05 {
-      background-image: url("../img/spec-05.jpg");
-    }
-    &_06 {
-      background-image: url("../img/spec-06.jpg");
-    }
   }
+
   &__caption {
     font-weight: 800;
     font-size: 40px;
@@ -410,8 +393,12 @@
   &__subtitle {
     margin-top: 30px;
   }
+  &__wr {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
   &__list {
-    @include greenline;
+    //@include greenline;
     position: relative;
     z-index: 10;
     margin-top: 40px;
@@ -421,10 +408,10 @@
     }
   }
   &__item {
-    flex: 1 1 24%;
+    flex: 1 0 24%;
   }
   &__img {
-    filter: drop-shadow(0px 4px 120px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0px 4px 120px rgba(0, 0, 0, .15));
   }
   &__name {
     margin-top: 20px;

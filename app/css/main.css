@@ -22,7 +22,7 @@
   margin: 30px 30px 0;
   max-width: 1860px;
   color: var(--color-black);
-  transition: color .3s linear; }
+  transition: color .1s linear; }
   .header_white {
     color: var(--color-white); }
   .header__contacts {
@@ -483,30 +483,18 @@
   .projects__btn {
     position: relative;
     z-index: 10;
-    margin-top: 60px;
-    padding: 24px 60px 19px; }
+    margin-top: 140px;
+    padding: 24px 60px 19px;
+    box-shadow: none; }
   .projects__slogan {
     font-size: 225px;
-    opacity: 0.03; }
+    opacity: .03; }
 
 .case__wrapper {
   color: var(--color-white); }
 
 .case__img {
-  margin-left: auto;
-  position: relative; }
-  .case__img::before, .case__img::after {
-    content: "";
-    position: absolute;
-    width: 98px;
-    height: 3px;
-    background-color: var(--color-green); }
-  .case__img::before {
-    bottom: 40px;
-    left: -98px; }
-  .case__img::after {
-    top: 40px;
-    right: -98px; }
+  margin-left: auto; }
 
 .case__info {
   margin-right: 30px; }
@@ -599,18 +587,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: var(--color-green); }
-  .specialize__item_01 {
-    background-image: url("../img/spec-01.jpg"); }
-  .specialize__item_02 {
-    background-image: url("../img/spec-02.jpg"); }
-  .specialize__item_03 {
-    background-image: url("../img/spec-03.jpg"); }
-  .specialize__item_04 {
-    background-image: url("../img/spec-04.jpg"); }
-  .specialize__item_05 {
-    background-image: url("../img/spec-05.jpg"); }
-  .specialize__item_06 {
-    background-image: url("../img/spec-06.jpg"); }
 
 .specialize__caption {
   font-weight: 800;
@@ -778,29 +754,20 @@
 .team__subtitle {
   margin-top: 30px; }
 
+.team__wr {
+  overflow-x: scroll;
+  overflow-y: hidden; }
+
 .team__list {
-  position: relative;
   position: relative;
   z-index: 10;
   margin-top: 40px;
   gap: 30px; }
-  .team__list::before, .team__list::after {
-    content: "";
-    position: absolute;
-    width: 98px;
-    height: 3px;
-    background-color: var(--color-green); }
-  .team__list::before {
-    bottom: 40px;
-    left: -98px; }
-  .team__list::after {
-    top: 40px;
-    right: -98px; }
   .team__list::before {
     top: 250px; }
 
 .team__item {
-  flex: 1 1 24%; }
+  flex: 1 0 24%; }
 
 .team__img {
   filter: drop-shadow(0px 4px 120px rgba(0, 0, 0, 0.15)); }
