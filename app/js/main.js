@@ -557,33 +557,67 @@ var headerController = new ScrollMagic.Controller({
 });
 new ScrollMagic.Scene({
   triggerElement: "#one"
-}).setClassToggle(".header", "header_white") // add class toggle
+}).setClassToggle(".header, .pagination", "white") // add class toggle
+// .setClassToggle(".pagination", "pagination_white") // add class toggle
 .addTo(headerController);
 new ScrollMagic.Scene({
   triggerElement: "#three"
-}).setClassToggle(".header", "header_white") // add class toggle
+}).setClassToggle(".header, .pagination", "white") // add class toggle
+// .setClassToggle(".pagination", "pagination_white") // add class toggle
 .addTo(headerController);
 new ScrollMagic.Scene({
   triggerElement: "#five"
-}).setClassToggle(".header", "header_white") // add class toggle
+}).setClassToggle(".header, .pagination", "white") // add class toggle
+// .setClassToggle(".pagination", "pagination_white") // add class toggle
 .addTo(headerController);
 new ScrollMagic.Scene({
   triggerElement: "#six"
-}).setClassToggle(".header", "header_white") // add class toggle
+}).setClassToggle(".header, .pagination", "white") // add class toggle
+// .setClassToggle(".pagination", "pagination_white") // add class toggle
 .addTo(headerController);
 new ScrollMagic.Scene({
   triggerElement: "#nine"
-}).setClassToggle(".header", "header_white") // add class toggle
+}).setClassToggle(".header, .pagination", "white") // add class toggle
+// .setClassToggle(".pagination", "pagination_white") // add class toggle
 .addTo(headerController); // fullpage
 
 $('#fullpage').fullpage({
-  scrollingSpeed: 1000
+  scrollingSpeed: 1000,
+  anchors: ['oneS', 'twoS', 'threeS', 'fourS', 'fiveS', 'sixS', 'sevenS', 'eightS', 'nineS'],
+  menu: '#fullpage-menu'
 });
 "use strict";
 
-$(document).ready(function () {
-  $('.projects__slider').owlCarousel({
-    items: 1
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+$(function () {
+  var _owl$owlCarousel;
+
+  var owl = $(".projects__slider");
+  var arrow_next = "<svg width='66' height='59' viewBox='0 0 66 59' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M47.3125 58L65.125 40.1875L47.3125 22.375' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='6 6'/><path d='M65.125 40.1875H36.625C16.9493 40.1875 1 24.2382 1 4.5625V1' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='6 6'/></svg>";
+  owl.owlCarousel((_owl$owlCarousel = {
+    nav: false,
+    items: 1,
+    loop: true,
+    mouseDrag: true,
+    autoplay: false,
+    smartSpeed: 1600,
+    margin: 0
+  }, _defineProperty(_owl$owlCarousel, "nav", true), _defineProperty(_owl$owlCarousel, "navText", ['', arrow_next]), _defineProperty(_owl$owlCarousel, "navClass", ["case__arrow case__arrow_prev btn-reset", "case__arrow case__arrow_next btn-reset"]), _defineProperty(_owl$owlCarousel, "navContainerClass", 'case__arrows-wrp'), _defineProperty(_owl$owlCarousel, "dotsClass", 'case__dots'), _defineProperty(_owl$owlCarousel, "dotClass", 'case__dot btn-reset'), _defineProperty(_owl$owlCarousel, "responsive", {
+    0: {
+      animateIn: 'fadeIn',
+      // add this
+      animateOut: 'fadeOut' // and this
+
+    }
+  }), _owl$owlCarousel));
+  owl.on('changed.owl.carousel', function (e) {
+    var next = e.page.index + 1;
+    $('.case__counter').html('№' + ++next);
+
+    if (next === 6) {
+      $('.case__counter').html('№1');
+    }
   });
 });
 /**

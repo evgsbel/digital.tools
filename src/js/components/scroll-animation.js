@@ -200,26 +200,33 @@ const headerController = new ScrollMagic.Controller({
 });
 
 new ScrollMagic.Scene({triggerElement: "#one"})
-  .setClassToggle(".header", "header_white") // add class toggle
+  .setClassToggle(".header, .pagination", "white") // add class toggle
+  // .setClassToggle(".pagination", "pagination_white") // add class toggle
   .addTo(headerController);
 new ScrollMagic.Scene({triggerElement: "#three"})
-  .setClassToggle(".header", "header_white") // add class toggle
+  .setClassToggle(".header, .pagination", "white") // add class toggle
+  // .setClassToggle(".pagination", "pagination_white") // add class toggle
   .addTo(headerController);
 new ScrollMagic.Scene({triggerElement: "#five"})
-  .setClassToggle(".header", "header_white") // add class toggle
+  .setClassToggle(".header, .pagination", "white") // add class toggle
+  // .setClassToggle(".pagination", "pagination_white") // add class toggle
   .addTo(headerController);
 new ScrollMagic.Scene({triggerElement: "#six"})
-  .setClassToggle(".header", "header_white") // add class toggle
+  .setClassToggle(".header, .pagination", "white") // add class toggle
+  // .setClassToggle(".pagination", "pagination_white") // add class toggle
   .addTo(headerController);
 new ScrollMagic.Scene({triggerElement: "#nine"})
-  .setClassToggle(".header", "header_white") // add class toggle
+  .setClassToggle(".header, .pagination", "white") // add class toggle
+  // .setClassToggle(".pagination", "pagination_white") // add class toggle
   .addTo(headerController);
 
 
 // fullpage
 
 $('#fullpage').fullpage({
-  scrollingSpeed: 1000
+  scrollingSpeed: 1000,
+  anchors: ['oneS', 'twoS', 'threeS', 'fourS', 'fiveS', 'sixS', 'sevenS', 'eightS', 'nineS'],
+  menu: '#fullpage-menu',
 });
 
 
