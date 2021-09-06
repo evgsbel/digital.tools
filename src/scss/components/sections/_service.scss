@@ -1,0 +1,51 @@
+// SERVICE
+
+.service {
+  @include section-bg(" ../img/sprite.svg#service-bg", 945, 720, 300);
+  &__inner {
+    @include bg-dot-right(1);
+  }
+  &__title {
+    margin-bottom: 0;
+  }
+  &__btn {
+    margin-top: 0;
+    margin-left: auto;
+    padding-right: 45px;
+    padding-left: 45px;
+  }
+  &__subtitle {
+    margin-top: 80px;
+    font-size: 20px;
+    line-height: 29px;
+  }
+  &__items {
+    position: relative;
+    z-index: 10;
+    margin-top: 100px;
+    gap: 31px;
+    @include greenline;
+  }
+  &__article {
+    flex: 0 1 32%;
+    padding: 30px;
+    box-shadow: 0 4px 120px rgba(0, 0, 0, .15);
+    background-color: var(--color-white);
+  }
+  &__caption {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 12px;
+    max-width: 78px;
+    max-height: 76px;
+  }
+  &__slogan {
+    font-size: 150px;
+  }
+}

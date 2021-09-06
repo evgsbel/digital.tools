@@ -1,16 +1,16 @@
 .header {
   position: fixed;
   z-index: 100;
-  width: 100%;
-  background-color: transparent;
   display: grid;
   align-items: center;
   grid-column-gap: 30px;
   grid-row: 1/2;
   grid-template-columns: repeat(12, 1fr);
   margin: 30px 30px 0;
+  width: 100%;
   max-width: 1860px;
   color: var(--color-black);
+  background-color: transparent;
   transition: color .1s linear;
   &.white {
     color: var(--color-white);

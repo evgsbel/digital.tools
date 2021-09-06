@@ -1,0 +1,52 @@
+// success
+
+.success {
+  background-image: url('../img/success-bg.png');
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color: #23252a;
+  &__inner {
+    @include bg-dot-left(.2, -30px);
+    @include bg-dot-right(.2);
+    z-index: 10;
+  }
+  &__slogan {
+    top: 0;
+    opacity: .05;
+  }
+  &__wrapper {
+    align-items: stretch;
+    margin-top: 60px;
+  }
+  &__list {
+    max-width: 320px;
+    color: var(--color-white);
+  }
+  &__item {
+    svg {
+      margin-right: 20px;
+      max-width: 42px;
+      max-height: 42px;
+      color: var(--color-green);
+    }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .success__number {
+    margin: 0;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .success__info {
+    margin: 0;
+    line-height: 28px;
+  }
+  .form {
+    margin-left: auto;
+  }
+  .btn {
+    margin-top: 50px;
+  }
+}

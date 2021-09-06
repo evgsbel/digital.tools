@@ -16,7 +16,7 @@ main {
 }
 
 body {
-  font-family: "Circe", sans-serif;
+  font-family: 'Circe', sans-serif;
   font-weight: 350;
   font-size: 16px;
   color: #000;
@@ -25,6 +25,10 @@ body {
 
 img {
   max-width: 100%;
+}
+
+h1, h2, h3, p {
+  margin: 0;
 }
 
 a {
@@ -73,10 +77,6 @@ ul {
   align-items: center;
 }
 
-.main {
-
-}
-
 .section {
   position: relative;
   overflow: hidden;
@@ -94,7 +94,6 @@ ul {
   margin: 0 auto;
   height: 100%;
   max-width: 1860px;
-
 }
 
 .inner {
@@ -113,7 +112,6 @@ ul {
 }
 
 .title-h2 {
-  margin: 0;
   margin-bottom: 65px;
   font-weight: 800;
   font-size: 80px;
@@ -126,14 +124,12 @@ ul {
 }
 
 .title-h3 {
-  margin: 0;
   font-weight: 800;
   font-size: 36px;
   line-height: 46px;
 }
 
 .subtitle {
-  margin: 0;
   font-weight: 350;
   font-size: 20px;
   line-height: 29px;
@@ -159,7 +155,7 @@ ul {
 }
 
 .btn:hover {
-  transform: translateY(-10px) !important;
+  transform: translateY(-10px) !important; // because of the animation buttons with scrollmagic
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -211,5 +207,105 @@ ul {
       background-repeat: no-repeat;
       transform: translateY(9px);
     }
+  }
+}
+
+.canvas {
+  position: absolute;
+  height: 100%;
+}
+
+.social {
+  color: var(--color-green);
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    transition: color .3s ease-in-out;
+    &:not(:last-child) {
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 1px solid var(--color-green);
+    }
+    &:hover {
+      color: #cb000e;
+    }
+  }
+  &__link {
+    font-size: 0;
+  }
+  &__icon {
+    width: 21px;
+    height: 21px;
+    &_fb {
+      width: 12px;
+    }
+  }
+}
+
+.list {
+  margin-top: 15px;
+  line-height: 28px;
+  &__item {
+    position: relative;
+    padding-left: 15px;
+    &::before {
+      content: '>';
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: 10px;
+      font-size: 16px;
+      line-height: 28px;
+      color: var(--color-green);
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    color: var(--color-green);
+  }
+}
+
+.red-round {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(255, 3, 51, .35);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  background: linear-gradient(90deg, #cb000e 0%, #e70a35 49.48%, #cb000e 100%);
+}
+
+.search {
+  position: absolute;
+  right: 40px;
+  bottom: 15%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px dashed var(--color-white);
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+  &__icon {
+    width: 32px;
+    height: 24px;
+    transition: transform 0.5s ease-in-out;
+  }
+  &:hover {
+    transform: rotate(360deg);
+  }
+  &:hover &__icon {
+    transform: rotate(-360deg);
   }
 }

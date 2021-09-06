@@ -1,0 +1,45 @@
+// team
+
+.team {
+  &__inner {
+    z-index: 10;
+    @include bg-dot-left(1, -160px);
+    @include bg-dot-right(1);
+  }
+  &__title {
+    margin: 0;
+  }
+  &__btn {
+    margin-left: auto;
+  }
+  &__subtitle {
+    margin-top: 30px;
+  }
+  &__list {
+    @include greenline;
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 50px 30px;
+    &::before {
+      bottom: 130px;
+    }
+  }
+  &__item {
+    flex: 1 0 14%;
+  }
+  &__img {
+    filter: drop-shadow(0 4px 120px rgba(0, 0, 0, .15));
+  }
+  &__name {
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  &__slogan {
+    top: 220px;
+    left: 250px;
+  }
+}

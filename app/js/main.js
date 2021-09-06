@@ -273,11 +273,13 @@ $(function () {
     }, {
       opacity: 1,
       y: 0
-    }, .5); // .staggerFromTo('.case__link', .5, {y:-5,opacity:0}, {y:0,opacity:1}, 3)
-    // .staggerFromTo('.case__img', .8, {x:30,opacity:0}, {x:0,opacity:1}, 1)
-    // .staggerFromTo('.case li', .7, {x:30,opacity:0}, {x:0,opacity:1}, .3)
-    // .staggerFromTo('.case p', .7, {x:-10,opacity:0}, {x:0,opacity:1}, .3)
-
+    }, .5).staggerFromTo('.projects__slider', .3, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, 3);
     secClients.fromTo('.clients__title', .5, {
       y: 30,
       opacity: 0
@@ -380,19 +382,13 @@ $(function () {
     }, {
       opacity: 1,
       y: 0
-    }, .7).staggerFromTo('.team__img', .2, {
+    }, .7).staggerFromTo('.team__img', .3, {
       y: 30,
       opacity: 0
     }, {
       y: 0,
       opacity: 1
-    }, .2).staggerFromTo('.team__name', .2, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .1).staggerFromTo('.team__info', .2, {
+    }, .3).staggerFromTo('.team__name', .2, {
       y: 30,
       opacity: 0
     }, {
@@ -519,72 +515,20 @@ $(function () {
       reverse: true
     }).setTween(secFooter).addTo(controller);
   });
-}); // // Init ScrollMagic
-// const ctrl = new ScrollMagic.Controller({
-//   globalSceneOptions: {
-//     triggerHook: 'onLeave'
-//   }
-// });
-//
-// // Create scene
-// $("section").each(function() {
-//
-//   let name = $(this).attr('id');
-//
-//   new ScrollMagic.Scene({
-//     triggerElement: this,
-//     duration: "101%"
-//   })
-//     .setPin(this)
-//     .addIndicators({
-//       colorStart: "rgba(255,255,255,0.5)",
-//       colorEnd: "rgba(255,255,255,0.5)",
-//       colorTrigger : "rgba(255,255,255,1)",
-//       name:name
-//     })
-//     .loglevel(3)
-//     .addTo(ctrl);
-//
-// });
-//
-// header
-
-var headerController = new ScrollMagic.Controller({
-  globalSceneOptions: {
-    duration: '100%',
-    triggerHook: 'onLeave'
-  }
-});
-new ScrollMagic.Scene({
-  triggerElement: "#one"
-}).setClassToggle(".header, .pagination", "white") // add class toggle
-// .setClassToggle(".pagination", "pagination_white") // add class toggle
-.addTo(headerController);
-new ScrollMagic.Scene({
-  triggerElement: "#three"
-}).setClassToggle(".header, .pagination", "white") // add class toggle
-// .setClassToggle(".pagination", "pagination_white") // add class toggle
-.addTo(headerController);
-new ScrollMagic.Scene({
-  triggerElement: "#five"
-}).setClassToggle(".header, .pagination", "white") // add class toggle
-// .setClassToggle(".pagination", "pagination_white") // add class toggle
-.addTo(headerController);
-new ScrollMagic.Scene({
-  triggerElement: "#six"
-}).setClassToggle(".header, .pagination", "white") // add class toggle
-// .setClassToggle(".pagination", "pagination_white") // add class toggle
-.addTo(headerController);
-new ScrollMagic.Scene({
-  triggerElement: "#nine"
-}).setClassToggle(".header, .pagination", "white") // add class toggle
-// .setClassToggle(".pagination", "pagination_white") // add class toggle
-.addTo(headerController); // fullpage
+}); // fullpage
 
 $('#fullpage').fullpage({
   scrollingSpeed: 1000,
   anchors: ['oneS', 'twoS', 'threeS', 'fourS', 'fiveS', 'sixS', 'sevenS', 'eightS', 'nineS'],
-  menu: '#fullpage-menu'
+  menu: '#fullpage-menu',
+  afterLoad: function afterLoad(anchorLink, index) {
+    //for the 2nd vertical section
+    if (index == 1 || index == 3 || index == 5 || index == 6 || index == 9) {
+      $('.header, .pagination').addClass('white');
+    } else {
+      $('.header, .pagination').removeClass('white');
+    }
+  }
 });
 "use strict";
 
@@ -619,12 +563,34 @@ $(function () {
       $('.case__counter').html('№1');
     }
   });
+  $('.projects__slider').on('translate.owl.carousel', function (e) {
+    var index = e.item.index;
+    $('.case__info').removeClass('animated animate__animated fadeInDown');
+    $('.case__info').eq(index).addClass('animated animate__animated fadeInDown');
+    $('.case__img').removeClass('animated animate__animated fadeInUp');
+    $('.case__img').eq(index).addClass('animated animate__animated fadeInUp');
+  });
 });
+"use strict";
+
 /**
  * название функции
  *
  * @param {number} first - первое число
  * @returns {number}
  */
-"use strict";
+//openHideMenu
+$(function () {
+  var openElem = document.querySelector('.js-open-hide-menu');
+  var hideMenu = document.querySelector('.hide-menu');
+  var closeBtn = document.querySelector('.js-close-hide-menu');
+  openElem.addEventListener('click', function (event) {
+    event.preventDefault();
+    hideMenu.classList.add('active');
+  });
+  closeBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    hideMenu.classList.remove('active');
+  });
+});
 //# sourceMappingURL=main.js.map

@@ -1,0 +1,30 @@
+// clients
+
+.clients {
+  background-color: #23252a;
+  &__inner {
+    @include bg-dot-left(.2, -40px);
+    @include bg-dot-right(.2);
+  }
+  &__subtitle {
+    max-width: 535px;
+    color: var(--color-white);
+  }
+  &__btn {
+    margin-left: auto;
+    padding: 24px 62px 19px;
+  }
+  &__list {
+    z-index: 10;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 83px;
+    gap: 127px 0;
+  }
+  &__item {
+    flex-basis: 24%;
+  }
+  &__slogan {
+    opacity: .03;
+  }
+}

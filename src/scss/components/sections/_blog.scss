@@ -1,0 +1,46 @@
+// blog
+
+.blog {
+  @include section-bg(" ../img/sprite.svg#blog-bg", 512, 512, 370);
+  &__inner {
+    z-index: 10;
+    @include bg-dot-left(1, -160px);
+    @include bg-dot-right(1);
+  }
+  &__btn {
+    margin-left: auto;
+    padding-right: 56px;
+    padding-left: 56px;
+  }
+  &__list {
+    margin-top: 60px;
+    gap: 30px;
+  }
+  &__item {
+    z-index: 20;
+    position: relative;
+    flex: 1 1 calc((100% / 3) - 60px);
+    padding: 230px 40px 20px;
+    min-height: 500px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 52.6%);
+    background-size: cover;
+    filter: drop-shadow(0px 4px 120px rgba(0, 0, 0, 0.15));
+  }
+  &__caption {
+    font-size: 30px;
+    line-height: 50px;
+  }
+  &__icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0.5;
+    svg {
+      width: 33px;
+      height: 27px;
+    }
+  }
+  &__icon-arrow {
+    padding: 12px 9px 12px 12px;
+  }
+}

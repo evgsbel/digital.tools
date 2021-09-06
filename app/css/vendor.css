@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url(./vendor/animate.css);
 html {
   line-height: 1.15;
   /* 1 */
@@ -725,6 +726,6 @@ template {
 .fp-responsive .fp-auto-height-responsive .fp-slide, .fp-responsive .fp-auto-height-responsive .fp-tableCell, .fp-responsive .fp-auto-height-responsive.fp-section {
   height: auto !important; }
 
-/*# sourceMappingURL=jquery.fullpage.min.css.map */
+/*# sourceMappingURL=03_jquery.fullpage.min.css.map */
 
 /*# sourceMappingURL=vendor.css.map */

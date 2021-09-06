@@ -33,4 +33,12 @@ $(() => {
     }
   });
 
+  $('.projects__slider').on('translate.owl.carousel', function (e) {
+    var index = e.item.index;
+    $('.case__info').removeClass('animated animate__animated fadeInDown');
+    $('.case__info').eq(index).addClass('animated animate__animated fadeInDown');
+    $('.case__img').removeClass('animated animate__animated fadeInUp');
+    $('.case__img').eq(index).addClass('animated animate__animated fadeInUp');
+  });
+
 });
