@@ -8,7 +8,6 @@
   height: 100vh;
   background-color: #23252a;
   transition: 1s transform cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: none;
   &__container {
     @include bg-dot-left(.2, -40px);
     @include bg-dot-right(.2);

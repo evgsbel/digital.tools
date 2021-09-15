@@ -159,7 +159,7 @@ $(() => {
 
 // fullpage
 
-function createFullPage() {
+function creatFullPage() {
   $('#fullpage').fullpage({
     scrollingSpeed: 1000,
     anchors: ['oneS', 'twoS', 'threeS', 'fourS', 'fiveS', 'sixS', 'sevenS', 'eightS', 'nineS'],
@@ -177,7 +177,7 @@ function createFullPage() {
 }
 
 $(document).ready(function () {
-  createFullPage();
+  creatFullPage();
 
   let addCl = true;
   $('.js-open-hide-menu').bind('click', function () {
@@ -186,12 +186,12 @@ $(document).ready(function () {
       $.fn.fullpage.destroy('all'); //отключаем плагим
     } else if(!addCl) {
       addCl = true;
-      createFullPage();
+      creatFullPage();
     }
   });
 
   $('.js-close-hide-menu').bind('click', function () {
-      createFullPage();
+      creatFullPage();
   });
 });
 
