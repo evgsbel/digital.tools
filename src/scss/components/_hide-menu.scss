@@ -1,30 +1,58 @@
 .hide-menu {
   position: absolute;
   top: 0;
-  right: -100%;
+  transform: translateX(100%);
   z-index: 500;
   padding-top: 30px;
   width: 100vw;
   height: 100vh;
   background-color: #23252a;
-  transition: 1s right cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 1s transform cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: none;
+  &__container {
+    @include bg-dot-left(.2, -40px);
+    @include bg-dot-right(.2);
+    &::after {
+      top: 0;
+      right: 150px;
+    }
+  }
   &__logo {
-    opacity: .15;
+    opacity: 0;
+    transition: 1s opacity cubic-bezier(0.25, 0.46, 0.45, 0.94), 1s transform ease-in-out;
+    &.opened-menu {
+      animation: showLogo 2s 1;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
   }
   &__close {
+    z-index: 100;
     align-self: start;
     grid-column: 11/12;
     margin-top: 60px;
     margin-left: auto;
     width: 45px;
     height: 45px;
+    color: var(--color-white);
+    transition: color .5s ease-in-out;
     svg {
       max-width: 100%;
       max-height: 100%;
     }
+    &:hover {
+      color: #cb000e;
+    }
   }
   &__nav {
     grid-column: 3/11;
+    opacity: 0;
+    transition: 1s opacity cubic-bezier(0.25, 0.46, 0.45, 0.94), 1s transform ease-in-out;
+    &.opened-menu {
+      animation: showNav 2s 1;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
   }
   &__list {
     display: flex;
@@ -64,7 +92,27 @@
   &.white {
     color: var(--color-white);
   }
-  &.active {
-    right: 0;
+  &.is-open {
+    transform: translateX(0);
+  }
+}
+
+@keyframes showLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: .15;
+    transform: translateY(0);
+  }
+}
+
+@keyframes showNav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

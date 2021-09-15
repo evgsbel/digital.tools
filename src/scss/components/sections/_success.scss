@@ -5,6 +5,9 @@
   background-position: right top;
   background-repeat: no-repeat;
   background-color: #23252a;
+  @media (max-width: (1367px)) {
+    background-size: 50% 100%;
+  }
   &__inner {
     @include bg-dot-left(.2, -30px);
     @include bg-dot-right(.2);
@@ -17,6 +20,12 @@
   &__wrapper {
     align-items: stretch;
     margin-top: 60px;
+    @media (max-width: (1600px)) {
+      margin-top: 30px;
+    }
+    @media (max-width: (1367px)) {
+      margin-top: 20px;
+    }
   }
   &__list {
     max-width: 320px;
@@ -28,25 +37,41 @@
       max-width: 42px;
       max-height: 42px;
       color: var(--color-green);
+      @media (max-width: (1367px)) {
+        max-width: 30px;
+        max-height: 30px;
+      }
     }
   }
   &__item:not(:last-child) {
     margin-bottom: 20px;
   }
-  .success__number {
+  &__number {
     margin: 0;
     font-weight: 800;
     font-size: 40px;
     line-height: 50px;
+    @media (max-width: (1600px)) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    @media (max-width: (1367px)) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
-  .success__info {
+  &__info {
     margin: 0;
     line-height: 28px;
+    @media (max-width: (1367px)) {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
   .form {
     margin-left: auto;
   }
-  .btn {
+  &__btn {
     margin-top: 50px;
   }
 }

@@ -13,6 +13,9 @@
   &__btn {
     margin-left: auto;
     padding: 24px 62px 19px;
+    @media (max-width: (1367px)) {
+      padding: 14px 42px;
+    }
   }
   &__list {
     z-index: 10;
@@ -20,9 +23,18 @@
     justify-content: space-between;
     margin-top: 83px;
     gap: 127px 0;
+    @media (max-width: (1600px)) {
+      gap: 100px 0;
+    }
+    @media (max-width: (1367px)) {
+      gap: 70px 0;
+    }
   }
   &__item {
     flex-basis: 24%;
+    @media (max-width: (1024px)) {
+      flex-basis: 21%;
+    }
   }
   &__slogan {
     opacity: .03;

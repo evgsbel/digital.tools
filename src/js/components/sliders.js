@@ -17,12 +17,8 @@ $(() => {
     navContainerClass: 'case__arrows-wrp',
     dotsClass: 'case__dots',
     dotClass: 'case__dot btn-reset',
-    responsive: {
-      0: {
-        animateIn: 'fadeIn', // add this
-        animateOut: 'fadeOut', // and this
-      },
-    },
+    animateIn: 'fadeInRight',
+    animateOut: 'fadeOutLeft',
   });
 
   owl.on('changed.owl.carousel', function (e) {
@@ -34,11 +30,25 @@ $(() => {
   });
 
   $('.projects__slider').on('translate.owl.carousel', function (e) {
-    var index = e.item.index;
-    $('.case__info').removeClass('animated animate__animated fadeInDown');
-    $('.case__info').eq(index).addClass('animated animate__animated fadeInDown');
-    $('.case__img').removeClass('animated animate__animated fadeInUp');
-    $('.case__img').eq(index).addClass('animated animate__animated fadeInUp');
+    let index = e.item.index;
+    // $('.projects__btn').removeClass('animated animate__animated fadeInUpBig');
+    $('.projects__btn').eq(index).addClass('animated animate__animated fadeInUpBig');
+    // $('.case__img').removeClass('animated animate__animated fadeInRightBig');
+    $('.case__img').eq(index).addClass('animated animate__animated fadeInRightBig');
+    // $('.case__info').removeClass('animated animate__animated fadeInLeftBig');
+    $('.case__info').eq(index).addClass('animated animate__animated fadeInLeftBig');
+
+  });
+
+  $('.projects__slider').on('translated.owl.carousel', function (e) {
+    let index = e.item.index;
+    $('.projects__btn').removeClass('animated animate__animated fadeInUpBig');
+    // $('.projects__btn').eq(index).addClass('animated animate__animated fadeInUpBig');
+    $('.case__img').removeClass('animated animate__animated fadeInRightBig');
+    // $('.case__img').eq(index).addClass('animated animate__animated fadeInRightBig');
+    $('.case__info').removeClass('animated animate__animated fadeInLeftBig');
+    // $('.case__info').eq(index).addClass('animated animate__animated fadeInLeftBig');
+
   });
 
 });

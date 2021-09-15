@@ -1,12 +1,38 @@
 .footer {
   background-image: url("../img/footer-bg.png"), url("../img/hero-bg.jpg");
-  background-repeat: no-repeat;
   background-position: right top, 0 0;
+  background-repeat: no-repeat;
+  @media (max-width: (1440px)) {
+    background-size: contain, cover;
+  }
+  &__inner {
+    grid-row: 2/2;
+    padding-top: 123px;
+    @media (max-width: (1600px)) {
+      padding-top: 100px;
+    }
+    @media (max-width: (1367px)) {
+      padding-top: 30px;
+    }
+  }
+  &__title {
+    @media (max-width: (1600px)) {
+      font-size: 90px;
+      line-height: 117px;
+    }
+    @media (max-width: (1367px)) {
+      font-size: 60px;
+      line-height: 90px;
+    }
+  }
   &__subtitle {
     color: var(--color-white);
   }
   &__btn {
     margin-top: 70px;
+    @media (max-width: (1600px)) {
+      margin-top: 40px;
+    }
   }
   &__top {
     display: grid;
@@ -42,6 +68,9 @@
     margin-right: 137px;
     max-width: 651px;
     color: var(--color-white);
+    @media (max-width: (1024px)) {
+      margin-right: 85px;
+    }
   }
   &__map {
     position: relative;
@@ -61,15 +90,26 @@
     background-image: url("../img/footer-contacts-bg.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    filter: drop-shadow(0px 4px 120px rgba(255, 255, 255, 0.15));
+    filter: drop-shadow(0 4px 120px rgba(255, 255, 255, 0.15));
+    @media (max-width: (1367px)) {
+      align-items: flex-start;
+      width: 300px;
+      height: 300px;
+    }
+    @media (max-width: (1024px)) {
+      padding: 0 67px;
+    }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -22px;
       width: 21px;
       height: 21px;
       background-image: url("../img/sprite.svg#icon-map-dots");
       background-repeat: no-repeat;
+      @media (max-width: (1367px)) {
+        left: 50%;
+      }
     }
     &::before {
       content: "";
@@ -89,18 +129,30 @@
     font-size: 40px;
     line-height: 59px;
     text-align: center;
+    @media (max-width: (1367px)) {
+      font-size: 30px;
+      line-height: 40px;
+    }
   }
   &__address {
     margin: 0;
     font-style: normal;
     font-size: 18px;
     line-height: 22px;
+    @media (max-width: (1367px)) {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
   &__copy {
     grid-column: 1/11;
     grid-row: 3/3;
     font-size: 12px;
     color: var(--color-white);
+    @media (max-width: (1600px)) {
+      grid-column: 2/11;
+      align-self: end;
+    }
     &_link {
       text-decoration: underline;
       color: var(--color-green);
@@ -122,5 +174,14 @@
     font-size: 13px;
     line-height: 19px;
     text-transform: uppercase;
+    @media (max-width: (1367px)) {
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+  }
+  &__link {
+    @media (max-width: (1367px)) {
+      font-size: 14px;
+    }
   }
 }

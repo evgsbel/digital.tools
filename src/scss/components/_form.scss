@@ -1,11 +1,20 @@
 .form {
   flex-grow: 1;
   max-width: 443px;
+  @media (max-width: (1024px)) {
+   max-width: 321px;
+  }
   &__title {
     margin: 0;
     font-size: 14px;
     line-height: 21px;
     color: var(--color-white);
+    @media (max-width: (1367px)) {
+      font-size: 14px;
+    }
+    @media (max-width: (1024px)) {
+      font-size: 12px;
+    }
     &_small {
       margin-bottom: 30px;
       font-weight: 700;
@@ -15,6 +24,12 @@
       font-size: 20px;
       line-height: 29px;
       text-transform: uppercase;
+      @media (max-width: (1367px)) {
+        font-size: 18px;
+      }
+      @media (max-width: (1024px)) {
+        font-size: 15px;
+      }
     }
     &_thin {
       font-weight: 400;
@@ -27,6 +42,9 @@
   &__wrapper {
     margin-top: 46px;
     gap: 0 32px;
+    @media (max-width: (1024px)) {
+      gap: 0 15px;
+    }
   }
   &__col {
     flex: 1 1 calc((100% / 2) - 32px);
@@ -43,6 +61,9 @@
           margin-bottom: 30px;
         }
       }
+    }
+    @media (max-width: (1024px)) {
+      flex-basis: calc((100% / 2) - 15px);
     }
   }
   &__input {
@@ -62,18 +83,26 @@
   &__btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-left: auto;
     border-radius: 50%;
-    padding: 12px;
     width: 60px;
     height: 60px;
     box-shadow: 0 20px 50px rgba(255, 3, 51, 0.5);
     font-size: 0;
     color: #fff;
     background: linear-gradient(90deg, #cb000e 0%, #e70a35 49.48%, #cb000e 100%);
+    @media (max-width: (1024px)) {
+      width: 40px;
+      height: 40px;
+    }
     svg {
       width: 30px;
       height: 35px;
+      @media (max-width: (1024px)) {
+        width: 20px;
+        height: 23px;
+      }
     }
   }
 }

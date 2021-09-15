@@ -21,6 +21,9 @@ body {
   font-size: 16px;
   color: #000;
   background-color: #000;
+  &.opened-menu {
+    overflow: hidden;
+  }
 }
 
 img {
@@ -91,9 +94,11 @@ ul {
   display: grid;
   grid-column-gap: 30px;
   grid-template-columns: repeat(12, 1fr);
+  //grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   margin: 0 auto;
+  width: 1860px;
   height: 100%;
-  max-width: 1860px;
+  max-width: 100%;
 }
 
 .inner {
@@ -101,6 +106,10 @@ ul {
   padding-top: 100px;
   height: 100%;
   max-width: 1230px;
+  @media (max-width: (1600px)) {
+    grid-column: 2/12;
+    max-width: 100%;
+  }
 }
 
 .title-h1 {
@@ -109,6 +118,14 @@ ul {
   font-size: 120px;
   line-height: 177px;
   color: #fff;
+  @media (max-width: (1400px)) {
+    font-size: 90px;
+    line-height: 120px;
+  }
+  @media (max-width: (1024px)) {
+    font-size: 70px;
+    line-height: 103px;
+  }
 }
 
 .title-h2 {
@@ -118,6 +135,15 @@ ul {
   line-height: 118px;
   text-transform: uppercase;
   color: #000;
+  @media (max-width: (1600px)) {
+    margin-bottom: 10px;
+    font-size: 60px;
+    line-height: 90px;
+  }
+  @media (max-width: (1440px)) {
+    font-size: 40px;
+    line-height: 70px;
+  }
   &_white {
     color: #fff;
   }
@@ -127,6 +153,9 @@ ul {
   font-weight: 800;
   font-size: 36px;
   line-height: 46px;
+  @media (max-width: (1440px)) {
+    font-size: 30px;
+  }
 }
 
 .subtitle {
@@ -136,6 +165,14 @@ ul {
   color: var(--color-grey);
   &_upper {
     text-transform: uppercase;
+  }
+  @media (max-width: (1600px)) {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  @media (max-width: (1367px)) {
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -152,6 +189,17 @@ ul {
   color: #fff;
   background-image: linear-gradient(90deg, #cb000e 0%, #e70a35 49.48%, #cb000e 100%);
   transition: transform .5s ease-in-out;
+  @media (max-width: (1600px)) {
+    font-size: 18px;
+  }
+  @media (max-width: (1367px)) {
+    padding: 14px 42px;
+    font-size: 16px;
+  }
+  @media (max-width: (1024px)) {
+    padding: 19px 23px;
+    font-size: 14px;
+  }
 }
 
 .btn:hover {
@@ -175,15 +223,19 @@ ul {
   text-transform: uppercase;
   color: #e5e5e5;
   opacity: 0.3;
+  @media (max-width: (1367px)) {
+    font-size: 140px;
+  }
 }
 
 .logo {
   grid-column: 1/2;
   font-family: 'Open-Sans', sans-serif;
   font-weight: 700;
-  font-size: 0;
+  font-size: 20px;
   line-height: 0;
   color: inherit;
+  transition: 1s opacity ease-in-out;
   &__img {
     font-size: 0;
     line-height: 0;
@@ -194,7 +246,6 @@ ul {
     padding-top: 2px;
     padding-bottom: 3px;
     border-bottom: 2px solid var(--color-green);
-    font-size: 20px;
     line-height: 1;
     &::after {
       content: '';
@@ -206,7 +257,18 @@ ul {
       background-image: url('../img/logo-dot.png');
       background-repeat: no-repeat;
       transform: translateY(9px);
+      @media (max-width: (1366px)) {
+        background-size: contain;
+      }
     }
+  }
+  @media (max-width: (1366px)) {
+    max-width: 90px;
+    font-size: 13px;
+  }
+  @media (max-width: (1024px)) {
+    max-width: 70px;
+    font-size: 11px;
   }
 }
 
@@ -247,6 +309,14 @@ ul {
 .list {
   margin-top: 15px;
   line-height: 28px;
+  @media (max-width: (1366px)) {
+    font-size: 14px;
+    line-height: 23px;
+  }
+  @media (max-width: (1024px)) {
+    font-size: 10px;
+    line-height: 15px;
+  }
   &__item {
     position: relative;
     padding-left: 15px;
@@ -259,6 +329,10 @@ ul {
       font-size: 16px;
       line-height: 28px;
       color: var(--color-green);
+      @media (max-width: (1024px)) {
+        font-size: 12px;
+        transform: translateX(-5px);
+      }
     }
   }
   &__link {
@@ -282,6 +356,13 @@ ul {
   font-size: 18px;
   line-height: 1;
   background: linear-gradient(90deg, #cb000e 0%, #e70a35 49.48%, #cb000e 100%);
+  @media (max-width: (1367px)) {
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 }
 
 .search {
@@ -297,10 +378,18 @@ ul {
   border: 1px dashed var(--color-white);
   border-radius: 50%;
   transition: transform 0.5s ease-in-out;
+  @media (max-width: (1367px)) {
+    width: 40px;
+    height: 40px;
+  }
   &__icon {
     width: 32px;
     height: 24px;
     transition: transform 0.5s ease-in-out;
+    @media (max-width: (1367px)) {
+      width: 21px;
+      height: 16px;
+    }
   }
   &:hover {
     transform: rotate(360deg);

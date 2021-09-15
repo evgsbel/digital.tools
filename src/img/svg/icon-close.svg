@@ -1,4 +1,4 @@
 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="42.4268" width="4" height="60" rx="2" transform="rotate(45 42.4268 0)" fill="white"/>
-<rect y="2.82861" width="2" height="60" rx="1" transform="rotate(-45 0 2.82861)" fill="white"/>
+<rect x="42.4268" width="4" height="60" rx="2" transform="rotate(45 42.4268 0)" fill="currentColor"/>
+<rect y="2.82861" width="2" height="60" rx="1" transform="rotate(-45 0 2.82861)" fill="currentColor"/>
 </svg>

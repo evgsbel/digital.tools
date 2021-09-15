@@ -5,6 +5,9 @@
   z-index: 100;
   width: 50px;
   height: 100%;
+  @media (max-width: (1440px)) {
+    left: 30px;
+  }
 }
 
 .pagination {
@@ -18,6 +21,9 @@
   height: 558px;
   border-left: 1px dashed currentColor;
   color: #a1b0c7;
+  @media (max-width: (1367px)) {
+    height: 355px;
+  }
   &.white {
     color: var(--color-white);
   }
@@ -27,6 +33,10 @@
     height: 13px;
     border-radius: 15px;
     background-color: currentColor;
+    @media (max-width: (1367px)) {
+      width: 5px;
+      height: 8px;
+    }
   }
   &__step {
     position: relative;
@@ -34,6 +44,9 @@
     padding: 23px 11px 8px;
     border-radius: 15px;
     transition: all .1s ease-in-out;
+    @media (max-width: (1367px)) {
+      padding: 15px 7px 5px;
+    }
     &.active {
       border: 2px solid currentColor;
       .pagination__icon {

@@ -6,12 +6,20 @@
     @include bg-dot-left(1, -155px);
     @include bg-dot-right(1);
   }
+  &__title {
+    @media (max-width: (1600px)) {
+      margin-bottom: 10px;
+    }
+  }
   &__subtitle {
     max-width: 535px;
   }
   &__btn {
     margin-left: auto;
     padding: 24px 38px 19px;
+    @media (max-width: (1367px)) {
+      padding: 14px 42px;
+    }
   }
   &__list {
     position: relative;
@@ -19,26 +27,50 @@
     flex-wrap: wrap;
     margin-top: 56px;
     gap: 30px;
+    @media (max-width: (1600px)) {
+     gap: 20px;
+    }
+    @media (max-width: (1367px)) {
+      margin-top: 15px;
+    }
   }
   &__item {
     position: relative;
-    display: flex;
     flex: 1 1 calc((100% / 3) - 60px);
-    flex-direction: column;
-    justify-content: flex-end;
     min-height: 235px;
     color: #fff;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: var(--color-green);
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+    @media (max-width: (1600px)) {
+      min-height: auto;
+      max-height: 200px;
+    }
+    @media (max-width: (1367px)) {
+      max-height: 160px;
+    }
   }
 
   &__caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     font-weight: 800;
     font-size: 40px;
     line-height: 50px;
     text-align: center;
     background-color: var(--color-green);
+    @media (max-width: (1600px)) {
+      font-size: 30px;
+    }
+    @media (max-width: (1367px)) {
+      font-size: 18px;
+      line-height: 28px;
+    }
   }
   &__slogan {
     opacity: 0.3;

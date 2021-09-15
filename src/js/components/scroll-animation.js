@@ -159,20 +159,44 @@ $(() => {
 
 // fullpage
 
-$('#fullpage').fullpage({
-  scrollingSpeed: 1000,
-  anchors: ['oneS', 'twoS', 'threeS', 'fourS', 'fiveS', 'sixS', 'sevenS', 'eightS', 'nineS'],
-  menu: '#fullpage-menu',
-  afterLoad: function(anchorLink, index){
-    //for the 2nd vertical section
-    if(index == 1 || index == 3 || index == 5 || index == 6 || index == 9){
-      $('.header, .pagination').addClass('white');
+function createFullPage() {
+  $('#fullpage').fullpage({
+    scrollingSpeed: 1000,
+    anchors: ['oneS', 'twoS', 'threeS', 'fourS', 'fiveS', 'sixS', 'sevenS', 'eightS', 'nineS'],
+    menu: '#fullpage-menu',
+    afterLoad: function(anchorLink, index){
+      //for the 2nd vertical section
+      if(index == 1 || index == 3 || index == 5 || index == 6 || index == 9){
+        $('.header, .pagination').addClass('white');
+      }
+      else{
+        $('.header, .pagination').removeClass('white');
+      }
     }
-    else{
-      $('.header, .pagination').removeClass('white');
+  });
+}
+
+$(document).ready(function () {
+  createFullPage();
+
+  let addCl = true;
+  $('.js-open-hide-menu').bind('click', function () {
+    if (addCl) {
+      addCl = false;
+      $.fn.fullpage.destroy('all'); //отключаем плагим
+    } else if(!addCl) {
+      addCl = true;
+      createFullPage();
     }
-  }
+  });
+
+  $('.js-close-hide-menu').bind('click', function () {
+      createFullPage();
+  });
 });
+
+
+
 
 
 

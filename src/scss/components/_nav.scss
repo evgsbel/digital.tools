@@ -1,14 +1,27 @@
 .nav {
   grid-column: 5/9;
+  @media (max-width: (1900px)) {
+    grid-column: 4/9;
+  }
+  @media (max-width: (1200px)) {
+    grid-column: 3/9;
+  }
+
   &__list {
     display: flex;
     font-weight: 800;
     font-size: 13px;
     text-transform: uppercase;
     color: inherit;
+    @media (max-width: (1600px)) {
+      font-size: 12px;
+    }
+    @media (max-width: (1024px)) {
+      font-size: 11px;
+    }
   }
   &__item {
-    margin-right: 83px;
+    margin-right: 11%;
     &:last-child {
       margin-right: 0;
     }
