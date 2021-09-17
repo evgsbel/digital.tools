@@ -80,7 +80,7 @@ for (let cn = 0; cn < canvases.length; cn++) {
         window.addEventListener('mousemove', mouseMove);
       }
       window.addEventListener('scroll', scrollCheck);
-      window.addEventListener('resize', resize);
+      // window.addEventListener('resize', resize);
     }
 
     function mouseMove(e) {
@@ -97,13 +97,13 @@ for (let cn = 0; cn < canvases.length; cn++) {
       else animateHeader = true;
     }
 
-    function resize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      largeHeader.style.height = height + 'px';
-      canvases[cn].width = width;
-      canvases[cn].height = height;
-    }
+    // function resize() {
+    //   width = window.innerWidth;
+    //   height = window.innerHeight;
+    //   largeHeader.style.height = height + 'px';
+    //   canvases[cn].width = width;
+    //   canvases[cn].height = height;
+    // }
 
     // animation
     function initAnimation() {

@@ -1,13 +1,14 @@
 .hide-menu {
   position: absolute;
   top: 0;
-  transform: translateX(100%);
   z-index: 500;
   padding-top: 30px;
   width: 100vw;
   height: 100vh;
   background-color: #23252a;
-  transition: 1s transform cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(100%);
+  transition: 1s transform cubic-bezier(.25, .46, .45, .94);
+  display: none;
   &__container {
     @include bg-dot-left(.2, -40px);
     @include bg-dot-right(.2);
@@ -18,7 +19,7 @@
   }
   &__logo {
     opacity: 0;
-    transition: 1s opacity cubic-bezier(0.25, 0.46, 0.45, 0.94), 1s transform ease-in-out;
+    transition: 1s opacity cubic-bezier(.25, .46, .45, .94), 1s transform ease-in-out;
     &.opened-menu {
       animation: showLogo 2s 1;
       animation-delay: 1s;
@@ -46,7 +47,7 @@
   &__nav {
     grid-column: 3/11;
     opacity: 0;
-    transition: 1s opacity cubic-bezier(0.25, 0.46, 0.45, 0.94), 1s transform ease-in-out;
+    transition: 1s opacity cubic-bezier(.25, .46, .45, .94), 1s transform ease-in-out;
     &.opened-menu {
       animation: showNav 2s 1;
       animation-delay: 1s;

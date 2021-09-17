@@ -10,6 +10,9 @@
     grid-row: 2/2;
     margin: 0;
     margin-top: 45px;
+    @include mobile {
+      grid-column: 1/7;
+    }
   }
   &__inner {
     @include bg-dot-right(.2);
@@ -26,6 +29,10 @@
     }
     @media (max-width: (1367px)) {
       padding: 14px 32px;
+    }
+    @include mobile {
+      padding: 17px 27px;
+      width: max-content;
     }
   }
   &__slogan {
@@ -51,6 +58,10 @@
     @media (max-width: (1367px)) {
       max-width: 80%;
     }
+    @include mobile {
+      flex-direction: column;
+      max-width: 100%;
+    }
   }
   &__img {
     flex-shrink: 0;
@@ -59,6 +70,14 @@
     @include greenline;
     @media (max-width: (1367px)) {
       flex-basis: 60%;
+    }
+    @include mobile {
+      flex-basis: 100%;
+      margin-left: 0;
+      img {
+        max-height: 45vh;
+        object-fit: cover;
+      }
     }
     &::before,
     &::after {
@@ -69,10 +88,22 @@
   }
   &__info {
     margin-right: 30px;
+    @include mobile {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 15px 30px;
+    }
   }
   &__link {
     text-decoration: underline;
     color: var(--color-green);
+    flex-basis: 100%;
+  }
+  &__description {
+    @include mobile {
+      margin-left: auto;
+      flex: 0 1 60%;
+    }
   }
   .case__text {
     margin: 0;
@@ -120,6 +151,9 @@
     @media (max-width: (1367px)) {
       top: 50%;
     }
+    @include mobile {
+      display: none;
+    }
   }
   &__dots {
     position: absolute;
@@ -128,6 +162,10 @@
     @media (max-width: (1600px)) {
       right: 12%;
       bottom: 105%;
+    }
+    @include mobile {
+      right: 0;
+      bottom: 5%;
     }
   }
   &__dot {

@@ -1,22 +1,39 @@
 @mixin burger {
   position: relative;
-  border: none;
+  display: none;
+
+  grid-column: 1;
+  justify-self: start;
+  grid-row: 1;
   padding: 0;
   width: var(--burger-width);
   height: var(--burger-height);
-  color: #000;
+  border: none;
+  color: inherit;
   background-color: transparent;
+  transition: transform .3s ease-in-out;
   cursor: pointer;
+  @include mobile {
+    display: block;
+  }
+  @media (max-width: (600px)) {
+    justify-self: end;
+    grid-column: 6;
+  }
+  &.left {
+    grid-column: 1;
+    justify-self: start;
+  }
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     width: 100%;
     height: var(--burger-line-height);
     background-color: currentColor;
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
   }
 
   &::before {
@@ -33,27 +50,29 @@
     top: 50%;
     width: 100%;
     height: var(--burger-line-height);
+    border-radius: 10px;
     background-color: currentColor;
     transform: translateY(-50%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform .3s ease-in-out;
   }
 
   &--active {
+    color: var(--color-white);
     &::before {
       top: 50%;
       transform: rotate(45deg);
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      transition: transform .3s ease-in-out, top 0.3s ease-in-out;
     }
 
     &::after {
       top: 50%;
       transform: rotate(-45deg);
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      transition: transform .3s ease-in-out, top 0.3s ease-in-out;
     }
 
     .burger__line {
       transform: scale(0);
-      transition: transform 0.3s ease-in-out;
+      transition: transform .3s ease-in-out;
     }
   }
 }

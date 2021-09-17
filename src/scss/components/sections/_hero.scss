@@ -7,6 +7,9 @@
   background-size: cover;
   &__container {
     grid-template-rows: 60px calc(100vh - 135px) 42px;
+    @include mobile {
+      grid-template-rows: 60px repeat(2, calc(50vh - 60px)) 60px;
+    }
   }
   &__inner {
     grid-row: 2/2;
@@ -14,6 +17,7 @@
     @media (max-width: (1600px)) {
       padding-top: 100px;
     }
+
   }
   &__wrapper {
     @media (max-width: (1600px)) {
@@ -31,17 +35,30 @@
     @media (max-width: (1025px)) {
       margin-right: 130px;
     }
+    @include mobile {
+      margin-right: 0;
+    }
   }
   &__subtitle {
     color: var(--color-white);
     @media (max-width: (1024px)) {
       font-size: 13px;
     }
+    @include mobile {
+      font-size: 18px;
+      line-height: 27px;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
   }
   &__btn {
     margin-top: 70px;
     @media (max-width: (1024px)) {
       margin-top: 45px;
+    }
+    @include mobile {
+      margin-top: 20px;
     }
   }
   &__form {
@@ -53,6 +70,10 @@
     @media (max-width: (1600px)) {
       grid-column: 2/11;
     }
+    @include mobile {
+      align-self: center;
+      grid-column: 2/6;
+    }
   }
   &__social {
     grid-column: 12;
@@ -60,6 +81,13 @@
     @media (max-width: (1367px)) {
       align-self: end;
       padding-right: 30px;
+    }
+    @include mobile {
+      grid-column: 3/5;
+      grid-row: 4;
+      justify-self: center;
+      align-self: end;
+      margin-bottom: 15px;
     }
   }
 }
@@ -69,6 +97,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
   }
   &__item {
     @media (max-width: (1440px)) {

@@ -6,7 +6,22 @@
   @media (max-width: (1200px)) {
     grid-column: 3/9;
   }
-
+  @include mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    grid-column: 1/7;
+    margin: 0 -30px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #23252a;
+    transform: translateY(-101%);
+    transition: transform .7s ease-in-out;
+  }
+  &.is-open {
+    transform: translateY(0);
+    color: #fff;
+  }
   &__list {
     display: flex;
     font-weight: 800;
@@ -18,6 +33,11 @@
     }
     @media (max-width: (1024px)) {
       font-size: 11px;
+    }
+    @include mobile {
+      height: 100%;
+      align-items: center;
+      justify-content: center;
     }
   }
   &__item {

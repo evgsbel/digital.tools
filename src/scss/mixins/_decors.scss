@@ -21,7 +21,7 @@
 @mixin bg-dot-right($opacity) {
   position: relative;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 150px;
     right: -154px;
@@ -31,6 +31,11 @@
     background-position: right top;
     background-repeat: no-repeat;
     opacity: $opacity;
+    @include mobile {
+      top: 0;
+      right: -30px;
+      background-size: 230px;
+    }
   }
 }
 
@@ -47,6 +52,10 @@
     background-position: right top;
     background-repeat: no-repeat;
     opacity: $opacity;
+    @include mobile {
+      left: -30px;
+      background-size: 230px;
+    }
   }
 }
 

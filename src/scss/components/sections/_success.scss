@@ -8,6 +8,9 @@
   @media (max-width: (1367px)) {
     background-size: 50% 100%;
   }
+  @include mobile {
+    background-size: cover;
+  }
   &__inner {
     @include bg-dot-left(.2, -30px);
     @include bg-dot-right(.2);

@@ -8,6 +8,9 @@
   @media (max-width: (1440px)) {
     left: 30px;
   }
+  @include mobile {
+    display: none;
+  }
 }
 
 .pagination {

@@ -9,12 +9,19 @@
   &__subtitle {
     max-width: 535px;
     color: var(--color-white);
+    @include mobile {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
   }
   &__btn {
     margin-left: auto;
     padding: 24px 62px 19px;
     @media (max-width: (1367px)) {
       padding: 14px 42px;
+    }
+    @include mobile {
+      margin: 50px auto 0;
     }
   }
   &__list {
@@ -28,6 +35,9 @@
     }
     @media (max-width: (1367px)) {
       gap: 70px 0;
+    }
+    @include mobile {
+      gap: 100px;
     }
   }
   &__item {

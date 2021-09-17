@@ -21,6 +21,7 @@ body {
   font-size: 16px;
   color: #000;
   background-color: #000;
+
   &.opened-menu {
     overflow: hidden;
   }
@@ -52,14 +53,6 @@ ul {
 
 .is-hidden {
   display: none !important; // stylelint-disable-line declaration-no-important
-}
-
-.for-mobile {
-  display: none;
-
-  @include mobile {
-    display: block;
-  }
 }
 
 .error {
@@ -99,6 +92,11 @@ ul {
   width: 1860px;
   height: 100%;
   max-width: 100%;
+  @include mobile {
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 15px;
+    padding: 0 30px;
+  }
 }
 
 .inner {
@@ -109,6 +107,9 @@ ul {
   @media (max-width: (1600px)) {
     grid-column: 2/12;
     max-width: 100%;
+  }
+  @include mobile {
+    grid-column: 1/7;
   }
 }
 
@@ -125,6 +126,10 @@ ul {
   @media (max-width: (1024px)) {
     font-size: 70px;
     line-height: 103px;
+  }
+  @include mobile {
+    font-size: 50px;
+    line-height: 74px;
   }
 }
 
@@ -144,6 +149,7 @@ ul {
     font-size: 40px;
     line-height: 70px;
   }
+
   &_white {
     color: #fff;
   }
@@ -163,9 +169,11 @@ ul {
   font-size: 20px;
   line-height: 29px;
   color: var(--color-grey);
+
   &_upper {
     text-transform: uppercase;
   }
+
   @media (max-width: (1600px)) {
     font-size: 18px;
     line-height: 25px;
@@ -226,6 +234,9 @@ ul {
   @media (max-width: (1367px)) {
     font-size: 140px;
   }
+  @include mobile {
+    font-size: 90px !important;
+  }
 }
 
 .logo {
@@ -270,6 +281,16 @@ ul {
     max-width: 70px;
     font-size: 11px;
   }
+  @include mobile {
+    display: none;
+  }
+}
+
+.mobile-logo {
+  display: none;
+  @include mobile {
+    display: flex;
+  }
 }
 
 .canvas {
@@ -279,27 +300,34 @@ ul {
 
 .social {
   color: var(--color-green);
+
   &__list {
     display: flex;
     align-items: center;
   }
+
   &__item {
     transition: color .3s ease-in-out;
+
     &:not(:last-child) {
       margin-right: 10px;
       padding-right: 10px;
       border-right: 1px solid var(--color-green);
     }
+
     &:hover {
       color: #cb000e;
     }
   }
+
   &__link {
     font-size: 0;
   }
+
   &__icon {
     width: 21px;
     height: 21px;
+
     &_fb {
       width: 12px;
     }
@@ -317,9 +345,15 @@ ul {
     font-size: 10px;
     line-height: 15px;
   }
+  @include mobile {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
   &__item {
     position: relative;
     padding-left: 15px;
+
     &::before {
       content: '>';
       position: absolute;
@@ -335,6 +369,7 @@ ul {
       }
     }
   }
+
   &__link {
     text-decoration: underline;
     color: var(--color-green);
@@ -363,6 +398,13 @@ ul {
     height: 30px;
     font-size: 16px;
   }
+  @include mobile {
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
 }
 
 .search {
@@ -377,11 +419,20 @@ ul {
   height: 60px;
   border: 1px dashed var(--color-white);
   border-radius: 50%;
-  transition: transform 0.5s ease-in-out;
+  transition: transform .5s ease-in-out;
   @media (max-width: (1367px)) {
     width: 40px;
     height: 40px;
   }
+  @include mobile {
+    position: static;
+    justify-self: end;
+    align-self: end;
+    grid-column: 6;
+    grid-row: 4;
+    margin-bottom: 15px;
+  }
+
   &__icon {
     width: 32px;
     height: 24px;
@@ -391,10 +442,86 @@ ul {
       height: 16px;
     }
   }
+
   &:hover {
     transform: rotate(360deg);
   }
+
   &:hover &__icon {
     transform: rotate(-360deg);
+  }
+}
+
+.hand {
+  display: none;
+  @include mobile {
+    position: relative;
+    display: flex;
+    align-self: end;
+    justify-self: start;
+    grid-column: 1;
+    grid-row: 4;
+    width: 60px;
+  }
+  &__arrows {
+    display: flex;
+    flex-direction: column;
+  }
+  &__arrow {
+    margin-bottom: 15px;
+    width: 10px;
+    height: 25px;
+  }
+  &__finger {
+    position: absolute;
+    right: 0;
+    width: 33px;
+    height: 39px;
+    transform: translate(-50%, -10%);
+    animation-name: mousePoint;
+    animation-duration: 2.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-fill-mode: backwards;
+  }
+}
+
+@keyframes mousePoint {
+  0% {
+    top: 10%;
+    opacity: 0;
+  }
+  20% {
+    top: 20%;
+    opacity: 1;
+  }
+  40% {
+    top: 30%;
+    opacity: 1;
+  }
+  60% {
+    top: 40%;
+    opacity: 1;
+  }
+  100% {
+    top: 80%;
+    opacity: 0;
+  }
+}
+
+.for-desktop {
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.for-mobile {
+  display: none;
+
+  @include mobile {
+    display: block;
   }
 }

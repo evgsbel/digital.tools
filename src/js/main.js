@@ -30,3 +30,22 @@ $(() => {
   })
 })
 
+//burger
+
+
+//openMobileNav
+
+$(() => {
+  const burger = document.querySelector('.burger');
+  const mobileNav = document.querySelector('.header__nav');
+  const mobileLogo = document.querySelector('.mobile-logo');
+
+  burger.addEventListener('click', (e) => {
+    e.currentTarget.classList.toggle('burger--active');
+    mobileNav.classList.toggle('is-open')
+    mobileLogo.classList.toggle('menu-in')
+  });
+
+})
+
+

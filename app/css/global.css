@@ -110,12 +110,6 @@ ul {
 .is-hidden {
   display: none !important; }
 
-.for-mobile {
-  display: none; }
-  @media (max-width: 768px) {
-    .for-mobile {
-      display: block; } }
-
 .error {
   border: 2px #ff4019 solid !important; }
 
@@ -147,6 +141,11 @@ ul {
   width: 1860px;
   height: 100%;
   max-width: 100%; }
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 15px;
+      padding: 0 30px; } }
 
 .inner {
   grid-column: 3/11;
@@ -157,6 +156,9 @@ ul {
     .inner {
       grid-column: 2/12;
       max-width: 100%; } }
+  @media (max-width: 768px) {
+    .inner {
+      grid-column: 1/7; } }
 
 .title-h1 {
   margin: 0;
@@ -172,6 +174,10 @@ ul {
     .title-h1 {
       font-size: 70px;
       line-height: 103px; } }
+  @media (max-width: 768px) {
+    .title-h1 {
+      font-size: 50px;
+      line-height: 74px; } }
 
 .title-h2 {
   margin-bottom: 65px;
@@ -263,6 +269,9 @@ ul {
   @media (max-width: 1367px) {
     .slogan {
       font-size: 140px; } }
+  @media (max-width: 768px) {
+    .slogan {
+      font-size: 90px !important; } }
 
 .logo {
   grid-column: 1/2;
@@ -303,6 +312,15 @@ ul {
     .logo {
       max-width: 70px;
       font-size: 11px; } }
+  @media (max-width: 768px) {
+    .logo {
+      display: none; } }
+
+.mobile-logo {
+  display: none; }
+  @media (max-width: 768px) {
+    .mobile-logo {
+      display: flex; } }
 
 .canvas {
   position: absolute;
@@ -340,6 +358,10 @@ ul {
     .list {
       font-size: 10px;
       line-height: 15px; } }
+  @media (max-width: 768px) {
+    .list {
+      font-size: 16px;
+      line-height: 25px; } }
   .list__item {
     position: relative;
     padding-left: 15px; }
@@ -382,6 +404,13 @@ ul {
       width: 30px;
       height: 30px;
       font-size: 16px; } }
+  @media (max-width: 768px) {
+    .red-round {
+      top: 5px;
+      right: 5px;
+      width: 40px;
+      height: 40px;
+      font-size: 18px; } }
 
 .search {
   position: absolute;
@@ -395,11 +424,19 @@ ul {
   height: 60px;
   border: 1px dashed var(--color-white);
   border-radius: 50%;
-  transition: transform 0.5s ease-in-out; }
+  transition: transform .5s ease-in-out; }
   @media (max-width: 1367px) {
     .search {
       width: 40px;
       height: 40px; } }
+  @media (max-width: 768px) {
+    .search {
+      position: static;
+      justify-self: end;
+      align-self: end;
+      grid-column: 6;
+      grid-row: 4;
+      margin-bottom: 15px; } }
   .search__icon {
     width: 32px;
     height: 24px;
@@ -412,5 +449,87 @@ ul {
     transform: rotate(360deg); }
   .search:hover .search__icon {
     transform: rotate(-360deg); }
+
+.hand {
+  display: none; }
+  @media (max-width: 768px) {
+    .hand {
+      position: relative;
+      display: flex;
+      align-self: end;
+      justify-self: start;
+      grid-column: 1;
+      grid-row: 4;
+      width: 60px; } }
+  .hand__arrows {
+    display: flex;
+    flex-direction: column; }
+  .hand__arrow {
+    margin-bottom: 15px;
+    width: 10px;
+    height: 25px; }
+  .hand__finger {
+    position: absolute;
+    right: 0;
+    width: 33px;
+    height: 39px;
+    transform: translate(-50%, -10%);
+    -webkit-animation-name: mousePoint;
+    animation-name: mousePoint;
+    -webkit-animation-duration: 2.3s;
+    animation-duration: 2.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards; }
+
+@-webkit-keyframes mousePoint {
+  0% {
+    top: 10%;
+    opacity: 0; }
+  20% {
+    top: 20%;
+    opacity: 1; }
+  40% {
+    top: 30%;
+    opacity: 1; }
+  60% {
+    top: 40%;
+    opacity: 1; }
+  100% {
+    top: 80%;
+    opacity: 0; } }
+
+@keyframes mousePoint {
+  0% {
+    top: 10%;
+    opacity: 0; }
+  20% {
+    top: 20%;
+    opacity: 1; }
+  40% {
+    top: 30%;
+    opacity: 1; }
+  60% {
+    top: 40%;
+    opacity: 1; }
+  100% {
+    top: 80%;
+    opacity: 0; } }
+
+.for-desktop {
+  display: block; }
+  @media (max-width: 768px) {
+    .for-desktop {
+      display: none; } }
+
+.for-mobile {
+  display: none; }
+  @media (max-width: 768px) {
+    .for-mobile {
+      display: block; } }
 
 /*# sourceMappingURL=global.css.map */

@@ -15,6 +15,11 @@
   @media (max-width: (1600px)) {
     grid-column-gap: 15px;
   }
+  @include mobile {
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+
   &__contacts {
     display: flex;
     align-items: center;
@@ -29,13 +34,19 @@
       grid-column: 9/13;
       font-size: 12px;
     }
+    @include mobile {
+      display: none;
+    }
+
   }
+
   &__link {
     padding-left: 30px;
     background-position: left center;
     background-size: 24px;
     background-repeat: no-repeat;
   }
+
   &__email {
     font-weight: 300;
     background-image: url("../img/sprite.svg#icon-email");
@@ -43,13 +54,124 @@
       line-height: 20px;
     }
   }
+
   &__phone {
     font-family: "Bebas";
     font-weight: 700;
     font-size: 1.5em;
     background-image: url("../img/sprite.svg#icon-phone");
   }
+
   &.white {
     color: var(--color-white);
+  }
+  &.left {
+    .mobile-phone {
+      display: block;
+    }
+  }
+}
+
+.burger {
+  --burger-width: 26px;
+  --burger-height: 20px;
+  --burger-line-height: 3px;
+  @include burger;
+}
+
+.mobile-logo {
+  position: relative;
+  align-items: center;
+  justify-self: center;
+  grid-column: 3/5;
+  width: 90px;
+  &__icon {
+    width: 30px;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 4s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 6s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 8s;
+    }
+  }
+  &.menu-in {
+    z-index: 100;
+    color: var(--color-white);
+    transform: translateY(10px);
+    transition: transform .3s ease-in-out;
+  }
+  &__text {
+    margin-left: 5px;
+    padding: 0 5px;
+    border-bottom: 2px solid var(--color-green);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  &::after {
+    content: '';
+    margin-left: 3px;
+    width: 3px;
+    height: 16px;
+    background-image: url('../img/m-logo-dot.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+.mobile-phone {
+  grid-column: 6;
+  justify-self: end;
+  display: none;
+  svg {
+    width: 20px;
+    height: 23px;
+  }
+  @media (max-width: (600px)) {
+    display: none;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  11.11% {
+    opacity: 1;
+  }
+  22.22% {
+    opacity: 1;
+  }
+  33.33% {
+    opacity: 0;
+  }
+  44.44% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }

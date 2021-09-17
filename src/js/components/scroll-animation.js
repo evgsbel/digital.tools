@@ -18,17 +18,17 @@ $(() => {
       .staggerFromTo('.hero__title', 1.2, {x: -30, opacity: 0}, {x: 0, opacity: 1}, 0.6)
       .staggerFromTo('.hero__subtitle', .5, {x: -30, opacity: 0}, {x: 0, opacity: 1}, 0.4)
       // .staggerFromTo('.hero__form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
-      .staggerFromTo('.partners__item', .3, {x:-10,opacity:0}, {x:0,opacity:1}, .2)
+      .staggerFromTo('.partners__item', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .2)
 
     secService
       .fromTo('.service__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
       .staggerFromTo('.service__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
       .fromTo('.service__btn', .5, {y: 20, opacity: 0}, {opacity: 1, y: 0}, .6)
-      .staggerFromTo('.service__article', .3, {x:-10,opacity:0}, {x:0,opacity:1}, .2)
+      .staggerFromTo('.service__article', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .2)
 
     secProject
       .fromTo('.projects__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
-      .staggerFromTo('.projects__slider', .3, {y: 30,opacity:0}, {y:0,opacity:1}, 3)
+      .staggerFromTo('.projects__slider', .3, {y: 30, opacity: 0}, {y: 0, opacity: 1}, 3)
 
     secClients
       .fromTo('.clients__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
@@ -45,7 +45,7 @@ $(() => {
         x: 0,
         opacity: 1
       }, .5)
-      .staggerFromTo('.specialize__img', .5, {scale:.5, opacity: 0}, {scale:1, opacity: 1})
+      .staggerFromTo('.specialize__img', .5, {scale: .5, opacity: 0}, {scale: 1, opacity: 1})
 
     secSuccess
       .fromTo('.success__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
@@ -76,8 +76,8 @@ $(() => {
       .staggerFromTo('.footer__subtitle', .5, {y: -30, opacity: 0}, {y: 0, opacity: 1}, 0.4)
       .staggerFromTo('.footer__btn', .8, {y: -30, opacity: 0}, {y: 0, opacity: 1}, 0.8)
       .staggerFromTo('.footer__map', .8, {opacity: 0}, {opacity: 1}, 0.8)
-      .staggerFromTo('.footer__caption', .2, {y:-10, opacity: 0}, {y:0, opacity: 1}, 0.2)
-      .staggerFromTo('.footer__address', .2, {y:10, opacity: 0}, {y:0, opacity: 1}, 0.2)
+      .staggerFromTo('.footer__caption', .2, {y: -10, opacity: 0}, {y: 0, opacity: 1}, 0.2)
+      .staggerFromTo('.footer__address', .2, {y: 10, opacity: 0}, {y: 0, opacity: 1}, 0.2)
       .staggerFromTo('.footer-nav__caption', .3, {x: -30, opacity: 0}, {x: 0, opacity: 1}, 0.3)
       .staggerFromTo('.footer-nav__item', .1, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .1)
 
@@ -164,13 +164,22 @@ function creatFullPage() {
     scrollingSpeed: 1000,
     anchors: ['oneS', 'twoS', 'threeS', 'fourS', 'fiveS', 'sixS', 'sevenS', 'eightS', 'nineS'],
     menu: '#fullpage-menu',
-    afterLoad: function(anchorLink, index){
+    afterLoad: function (anchorLink, index) {
       //for the 2nd vertical section
-      if(index == 1 || index == 3 || index == 5 || index == 6 || index == 9){
-        $('.header, .pagination').addClass('white');
+      if (index == 1 || index == 3 || index == 5 || index == 6 || index == 9) {
+        $('.header, .pagination, .burger').addClass('white');
+      } else {
+        $('.header, .pagination, .burger').removeClass('white');
       }
-      else{
-        $('.header, .pagination').removeClass('white');
+
+      let windowWidth = $('body').innerWidth()
+
+      if (windowWidth < 600) {
+        if (index == 1 || index == 9) {
+          $('.header, .burger').addClass('left');
+        } else {
+          $('.header, .burger').removeClass('left');
+        }
       }
     }
   });
@@ -184,14 +193,14 @@ $(document).ready(function () {
     if (addCl) {
       addCl = false;
       $.fn.fullpage.destroy('all'); //отключаем плагим
-    } else if(!addCl) {
+    } else if (!addCl) {
       addCl = true;
       creatFullPage();
     }
   });
 
   $('.js-close-hide-menu').bind('click', function () {
-      creatFullPage();
+    creatFullPage();
   });
 });
 

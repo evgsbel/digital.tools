@@ -13,12 +13,19 @@
   }
   &__subtitle {
     max-width: 535px;
+    @include mobile {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
   }
   &__btn {
     margin-left: auto;
     padding: 24px 38px 19px;
     @media (max-width: (1367px)) {
       padding: 14px 42px;
+    }
+    @include mobile {
+      margin-top: 20px;
     }
   }
   &__list {
@@ -53,6 +60,10 @@
     @media (max-width: (1367px)) {
       max-height: 160px;
     }
+    @include mobile {
+      max-height: 100vh;
+      max-height: 100vh;
+    }
   }
 
   &__caption {
@@ -71,8 +82,24 @@
       font-size: 18px;
       line-height: 28px;
     }
+    @include mobile {
+      font-size: 40px;
+      line-height: 50px;
+    }
   }
   &__slogan {
     opacity: 0.3;
+  }
+  .case__dots {
+    bottom: -40px;
+    right: 30px;
+  }
+  .case__dot {
+    background-color: #d5dce9;
+    opacity: 1;
+  }
+  .case__dot.active,
+  .case__dot:hover {
+    background-color: var(--color-green);
   }
 }
