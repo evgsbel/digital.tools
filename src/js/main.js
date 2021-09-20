@@ -46,8 +46,22 @@ $(() => {
     mobileNav.classList.toggle('is-open')
     mobileLogo.classList.toggle('menu-in')
     header.classList.toggle('menu-in')
-  });
+  })
 
 })
+
+$(() => {
+  //sticky header
+
+  $(window)
+    .scroll(function windowScroll() {
+      if ($(this).scrollTop() > 4) {
+        $('body').addClass('sticky');
+      } else {
+        $('body').removeClass('sticky');
+      }
+    });
+});
+
 
 

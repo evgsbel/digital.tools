@@ -9,6 +9,17 @@
     background-position: bottom, top;
     background-size: 100% 60%, 100% 40%;
   }
+
+  &__container {
+    grid-template-rows: 60px calc(100vh - 135px) 42px;
+    @include mobile {
+      grid-template-rows: 60px repeat(2, calc(50vh - 60px)) 60px;
+    }
+    @include small {
+      grid-template-rows: 60px repeat(2, calc(42vh - 60px)) 60px;
+    }
+  }
+
   &__inner {
     grid-row: 2/2;
     padding-top: 123px;
@@ -22,6 +33,7 @@
       grid-row: 2/4;
     }
   }
+
   &__wr {
     @include mobile {
       flex-direction: column;
@@ -30,6 +42,7 @@
       height: 100%;
     }
   }
+
   &__title {
     @media (max-width: (1600px)) {
       font-size: 90px;
@@ -39,16 +52,23 @@
       font-size: 60px;
       line-height: 90px;
     }
+    @include small {
+      font-size: 50px;
+      line-height: 60px;
+    }
   }
+
   &__subtitle {
     color: var(--color-white);
   }
+
   &__btn {
     margin-top: 70px;
     @media (max-width: (1600px)) {
       margin-top: 40px;
     }
   }
+
   &__top {
     display: grid;
     align-items: center;
@@ -58,27 +78,32 @@
     grid-template-columns: repeat(12, 1fr);
     margin-top: 30px;
   }
+
   &__contacts {
     grid-column: 10/13;
     color: #fff;
   }
+
   &__link {
     padding-left: 30px;
     background-position: left center;
     background-size: 24px;
     background-repeat: no-repeat;
   }
+
   &__email {
     margin-right: 100px;
     font-weight: 300;
     background-image: url("../img/sprite.svg#icon-email");
   }
+
   &__phone {
     font-family: "Bebas";
     font-weight: 700;
     font-size: 25px;
     background-image: url("../img/sprite.svg#icon-phone");
   }
+
   &__info {
     margin-right: 137px;
     max-width: 651px;
@@ -93,6 +118,7 @@
       margin-right: 0;
     }
   }
+
   &__map {
     position: relative;
     display: flex;
@@ -123,6 +149,11 @@
     @include mobile {
       margin: 0;
     }
+    @include height {
+      margin: 40px auto;
+    }
+
+
     &::after {
       content: '';
       position: absolute;
@@ -135,6 +166,7 @@
         left: 50%;
       }
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -146,6 +178,7 @@
       background-repeat: no-repeat;
     }
   }
+
   &__caption {
     margin: 0;
     margin-bottom: 10px;
@@ -158,6 +191,7 @@
       line-height: 40px;
     }
   }
+
   &__address {
     margin: 0;
     font-style: normal;
@@ -168,6 +202,7 @@
       line-height: 20px;
     }
   }
+
   &__copy {
     grid-column: 1/11;
     grid-row: 3/3;
@@ -180,11 +215,13 @@
     @include mobile {
       display: none;
     }
+
     &_link {
       text-decoration: underline;
       color: var(--color-green);
     }
   }
+
   &__social {
     grid-column: 12;
     grid-row: 3;
@@ -205,6 +242,7 @@
   @include mobile {
     display: none;
   }
+
   &__caption {
     margin: 0;
     margin-bottom: 20px;
@@ -217,6 +255,7 @@
       margin-bottom: 10px;
     }
   }
+
   &__link {
     @media (max-width: (1367px)) {
       font-size: 14px;

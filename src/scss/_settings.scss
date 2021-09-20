@@ -23,7 +23,11 @@ body {
   background-color: #000;
 
   &.opened-menu {
-    overflow: hidden;
+    overflow: hidden !important;
+  }
+
+  @include height {
+    overflow-x: hidden;
   }
 }
 
@@ -63,6 +67,7 @@ ul {
   border: none;
   background: transparent;
   cursor: pointer;
+  padding: 0;
 }
 
 .flex {
@@ -81,7 +86,6 @@ ul {
   transition: transform .3s linear;
   @include height {
     padding-bottom: 50px;
-    height: auto;
   }
 }
 
@@ -102,16 +106,18 @@ ul {
     padding: 0 30px;
   }
   @include height {
+    display: block;
     height: auto;
+    padding: 0 15px;
   }
 }
-@include height {
-  .fp-section,
-  .fp-slide,
-  .fp-tableCell {
-    height: auto !important;
-  }
-}
+//@include height {
+//  .fp-section,
+//  .fp-slide,
+//  .fp-tableCell {
+//    height: auto !important;
+//  }
+//}
 
 .inner {
   grid-column: 3/11;
@@ -127,6 +133,7 @@ ul {
   }
   @include small {
     padding-top: 20px;
+    height: auto;
   }
 }
 
@@ -450,6 +457,12 @@ ul {
     align-self: end;
     grid-column: 6;
     grid-row: 4;
+    margin-bottom: 15px;
+  }
+  @include height {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
     margin-bottom: 15px;
   }
 

@@ -49,7 +49,7 @@
     }
     @include mobile {
       padding: 230px 40px 20px;
-      height: 50vh;
+      height: 40vh;
       filter: none;
       padding-top: 70px;
     }
@@ -68,6 +68,10 @@
     @include mobile {
       font-size: 30px;
       line-height: 40px;
+    }
+    @media (max-width: (320px)) {
+      font-size: 20px;
+      line-height: 30px;
     }
   }
   &__icon {

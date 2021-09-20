@@ -281,440 +281,436 @@ $(function () {
 $(function () {
   $(window).on('load', function () {
     $('.preloader__wrp').fadeOut();
-    var windowWidth = $('body').innerWidth();
-    var secHero = new TimelineMax();
-    var secService = new TimelineMax();
-    var secProject = new TimelineMax();
-    var secClients = new TimelineMax();
-    var secSpecialize = new TimelineMax();
-    var secSuccess = new TimelineMax();
-    var secTeam = new TimelineMax();
-    var secBlog = new TimelineMax();
-    var secFooter = new TimelineMax(); // init
+  });
+});
+$(function () {
+  var windowWidth = $('body').innerWidth();
+  var secHero = new TimelineMax();
+  var secService = new TimelineMax();
+  var secProject = new TimelineMax();
+  var secClients = new TimelineMax();
+  var secSpecialize = new TimelineMax();
+  var secSuccess = new TimelineMax();
+  var secTeam = new TimelineMax();
+  var secBlog = new TimelineMax();
+  var secFooter = new TimelineMax(); // init
 
-    var controller = new ScrollMagic.Controller();
-    secHero.staggerFromTo('.hero__title', 1.2, {
-      x: -30,
+  var controller = new ScrollMagic.Controller();
+  secHero.staggerFromTo('.hero__title', 1.2, {
+    x: -30,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, 0.6).staggerFromTo('.hero__subtitle', .5, {
+    x: -30,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, 0.4).staggerFromTo('.hero .form', .8, {
+    x: 30,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, 0.8).staggerFromTo('.partners__item', .3, {
+    x: -10,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, .2);
+
+  if (windowWidth < 769) {
+    secService.fromTo('.service__title', .1, {
+      y: 30,
       opacity: 0
     }, {
-      x: 0,
-      opacity: 1
-    }, 0.6).staggerFromTo('.hero__subtitle', .5, {
-      x: -30,
+      opacity: 1,
+      y: 0
+    }, .2).staggerFromTo('.service__subtitle', .5, {
+      y: 30,
       opacity: 0
     }, {
-      x: 0,
+      y: 0,
       opacity: 1
-    }, 0.4).staggerFromTo('.hero .form', .8, {
-      x: 30,
+    }, .2).fromTo('.service__btn', .1, {
+      y: 20,
       opacity: 0
     }, {
-      x: 0,
-      opacity: 1
-    }, 0.8).staggerFromTo('.partners__item', .3, {
+      opacity: 1,
+      y: 0
+    }, .2).staggerFromTo('.service__article', .3, {
       x: -10,
       opacity: 0
     }, {
       x: 0,
-      opacity: 1
-    }, .2);
-
-    if (windowWidth < 769) {
-      secService.fromTo('.service__title', .1, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .2).staggerFromTo('.service__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .2).fromTo('.service__btn', .1, {
-        y: 20,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .2).staggerFromTo('.service__article', .3, {
-        x: -10,
-        opacity: 0
-      }, {
-        x: 0,
-        opacity: 1
-      }, .1);
-    } else {
-      secService.fromTo('.service__title', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .5).staggerFromTo('.service__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .6).fromTo('.service__btn', .5, {
-        y: 20,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .6).staggerFromTo('.service__article', .3, {
-        x: -10,
-        opacity: 0
-      }, {
-        x: 0,
-        opacity: 1
-      }, .2);
-    }
-
-    secProject.fromTo('.projects__title', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .5).staggerFromTo('.projects__slider', .3, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, 3);
-    secClients.fromTo('.clients__title', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .5).staggerFromTo('.clients__subtitle', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6).fromTo('.clients__btn', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .7).staggerFromTo('.clients__item', .3, {
-      x: -10,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, .2);
-
-    if (windowWidth < 769) {
-      secSpecialize.fromTo('.specialize__title', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .5).staggerFromTo('.specialize__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .6).fromTo('.specialize__btn', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .7).staggerFromTo('.specialize__list', .3, {
-        x: -10,
-        opacity: 0
-      }, {
-        x: 0,
-        opacity: 1
-      }, .2);
-    } else {
-      secSpecialize.fromTo('.specialize__title', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .5).staggerFromTo('.specialize__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .6).fromTo('.specialize__btn', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .7).staggerFromTo('.specialize__item', .8, {
-        rotationY: -40,
-        x: -10,
-        opacity: 0
-      }, {
-        rotationY: 0,
-        x: 0,
-        opacity: 1
-      }, .5).staggerFromTo('.specialize__img', .5, {
-        scale: .5,
-        opacity: 0
-      }, {
-        scale: 1,
-        opacity: 1
-      });
-    }
-
-    secSuccess.fromTo('.success__title', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .5).staggerFromTo('.success__subtitle', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6).staggerFromTo('.success .form', .8, {
-      x: 30,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, 0.8).staggerFromTo('.success__item', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6).staggerFromTo('.success__btn', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6);
-
-    if (windowWidth < 769) {
-      secTeam.fromTo('.team__title', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .5).staggerFromTo('.team__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .6).fromTo('.team__btn', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .7).staggerFromTo('.team__list', .3, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .3);
-    } else {
-      secTeam.fromTo('.team__title', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .5).staggerFromTo('.team__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .6).fromTo('.team__btn', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .7).staggerFromTo('.team__img', .3, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .3).staggerFromTo('.team__name', .2, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .1);
-    }
-
-    if (windowWidth < 769) {
-      secBlog.fromTo('.blog__title', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .5).staggerFromTo('.blog__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .6).fromTo('.blog__btn', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .6).fromTo('.blog__list', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .6);
-    } else {
-      secBlog.fromTo('.blog__title', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .5).staggerFromTo('.blog__subtitle', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1
-      }, .6).fromTo('.blog__btn', .5, {
-        y: 30,
-        opacity: 0
-      }, {
-        opacity: 1,
-        y: 0
-      }, .6).staggerFromTo('.blog__item', .8, {
-        rotationY: -40,
-        x: -10,
-        opacity: 0
-      }, {
-        rotationY: 0,
-        x: 0,
-        opacity: 1
-      }, .5);
-    }
-
-    secFooter.staggerFromTo('.footer__title', 1.2, {
-      x: -30,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, 0.6).staggerFromTo('.footer__subtitle', .5, {
-      y: -30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, 0.4).staggerFromTo('.footer__btn', .8, {
-      y: -30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, 0.8).staggerFromTo('.footer__map', .8, {
-      opacity: 0
-    }, {
-      opacity: 1
-    }, 0.8).staggerFromTo('.footer__caption', .2, {
-      y: -10,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, 0.2).staggerFromTo('.footer__address', .2, {
-      y: 10,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, 0.2).staggerFromTo('.footer-nav__caption', .3, {
-      x: -30,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, 0.3).staggerFromTo('.footer-nav__item', .1, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
       opacity: 1
     }, .1);
-    var sceneHero = new ScrollMagic.Scene({
-      triggerElement: ".hero",
-      triggerHook: 0,
-      reverse: true
-    }).setTween(secHero).addTo(controller);
-    var sceneService = new ScrollMagic.Scene({
-      triggerElement: ".service",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secService).addTo(controller);
-    var sceneProject = new ScrollMagic.Scene({
-      triggerElement: ".projects",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secProject).addTo(controller);
-    var sceneClients = new ScrollMagic.Scene({
-      triggerElement: ".clients",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secClients).addTo(controller);
-    var sceneSpecialize = new ScrollMagic.Scene({
-      triggerElement: ".specialize",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secSpecialize).addTo(controller);
-    var sceneSuccess = new ScrollMagic.Scene({
-      triggerElement: ".success",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secSuccess).addTo(controller);
-    var sceneTeam = new ScrollMagic.Scene({
-      triggerElement: ".team",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secTeam).addTo(controller);
-    var sceneBlog = new ScrollMagic.Scene({
-      triggerElement: ".blog",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secBlog).addTo(controller);
-    var sceneFooter = new ScrollMagic.Scene({
-      triggerElement: ".footer",
-      triggerHook: 0.6,
-      reverse: true
-    }).setTween(secFooter).addTo(controller);
-  });
+  } else {
+    secService.fromTo('.service__title', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .5).staggerFromTo('.service__subtitle', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .6).fromTo('.service__btn', .5, {
+      y: 20,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .6).staggerFromTo('.service__article', .3, {
+      x: -10,
+      opacity: 0
+    }, {
+      x: 0,
+      opacity: 1
+    }, .2);
+  }
+
+  secProject.fromTo('.projects__title', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    opacity: 1,
+    y: 0
+  }, .5).staggerFromTo('.projects__slider', .3, {
+    y: 30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, 3);
+  secClients.fromTo('.clients__title', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    opacity: 1,
+    y: 0
+  }, .5).staggerFromTo('.clients__subtitle', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, .6).fromTo('.clients__btn', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    opacity: 1,
+    y: 0
+  }, .7).staggerFromTo('.clients__item', .3, {
+    x: -10,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, .2);
+
+  if (windowWidth < 769) {
+    secSpecialize.fromTo('.specialize__title', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .5).staggerFromTo('.specialize__subtitle', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .6).fromTo('.specialize__btn', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .7).staggerFromTo('.specialize__list', .3, {
+      x: -10,
+      opacity: 0
+    }, {
+      x: 0,
+      opacity: 1
+    }, .2);
+  } else {
+    secSpecialize.fromTo('.specialize__title', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .5).staggerFromTo('.specialize__subtitle', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .6).fromTo('.specialize__btn', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .7).staggerFromTo('.specialize__item', .8, {
+      rotationY: -40,
+      x: -10,
+      opacity: 0
+    }, {
+      rotationY: 0,
+      x: 0,
+      opacity: 1
+    }, .5).staggerFromTo('.specialize__img', .5, {
+      scale: .5,
+      opacity: 0
+    }, {
+      scale: 1,
+      opacity: 1
+    });
+  }
+
+  secSuccess.fromTo('.success__title', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    opacity: 1,
+    y: 0
+  }, .5).staggerFromTo('.success__subtitle', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, .6).staggerFromTo('.success .form', .8, {
+    x: 30,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, 0.8).staggerFromTo('.success__item', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, .6).staggerFromTo('.success__btn', .5, {
+    y: 30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, .6);
+
+  if (windowWidth < 769) {
+    secTeam.fromTo('.team__title', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .5).staggerFromTo('.team__subtitle', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .6).fromTo('.team__btn', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .7).staggerFromTo('.team__list', .3, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .3);
+  } else {
+    secTeam.fromTo('.team__title', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .5).staggerFromTo('.team__subtitle', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .6).fromTo('.team__btn', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .7).staggerFromTo('.team__item', .3, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .3);
+  }
+
+  if (windowWidth < 769) {
+    secBlog.fromTo('.blog__title', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .5).staggerFromTo('.blog__subtitle', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .6).fromTo('.blog__btn', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .6).fromTo('.blog__list', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .6);
+  } else {
+    secBlog.fromTo('.blog__title', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .5).staggerFromTo('.blog__subtitle', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1
+    }, .6).fromTo('.blog__btn', .5, {
+      y: 30,
+      opacity: 0
+    }, {
+      opacity: 1,
+      y: 0
+    }, .6).staggerFromTo('.blog__item', .8, {
+      rotationY: -40,
+      x: -10,
+      opacity: 0
+    }, {
+      rotationY: 0,
+      x: 0,
+      opacity: 1
+    }, .5);
+  }
+
+  secFooter.staggerFromTo('.footer__title', 1.2, {
+    x: -30,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, 0.6).staggerFromTo('.footer__subtitle', .5, {
+    y: -30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, 0.4).staggerFromTo('.footer__btn', .8, {
+    y: -30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, 0.8).staggerFromTo('.footer__map', .8, {
+    opacity: 0
+  }, {
+    opacity: 1
+  }, 0.8).staggerFromTo('.footer__caption', .2, {
+    y: -10,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, 0.2).staggerFromTo('.footer__address', .2, {
+    y: 10,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, 0.2).staggerFromTo('.footer-nav__caption', .3, {
+    x: -30,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, 0.3).staggerFromTo('.footer-nav__item', .1, {
+    y: 30,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1
+  }, .1);
+  var sceneHero = new ScrollMagic.Scene({
+    triggerElement: ".hero",
+    triggerHook: 0,
+    reverse: true
+  }).setTween(secHero).addTo(controller);
+  var sceneService = new ScrollMagic.Scene({
+    triggerElement: ".service",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secService).addTo(controller);
+  var sceneProject = new ScrollMagic.Scene({
+    triggerElement: ".projects",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secProject).addTo(controller);
+  var sceneClients = new ScrollMagic.Scene({
+    triggerElement: ".clients",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secClients).addTo(controller);
+  var sceneSpecialize = new ScrollMagic.Scene({
+    triggerElement: ".specialize",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secSpecialize).addTo(controller);
+  var sceneSuccess = new ScrollMagic.Scene({
+    triggerElement: ".success",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secSuccess).addTo(controller);
+  var sceneTeam = new ScrollMagic.Scene({
+    triggerElement: ".team",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secTeam).addTo(controller);
+  var sceneBlog = new ScrollMagic.Scene({
+    triggerElement: ".blog",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secBlog).addTo(controller);
+  var sceneFooter = new ScrollMagic.Scene({
+    triggerElement: ".footer",
+    triggerHook: 0.6,
+    reverse: true
+  }).setTween(secFooter).addTo(controller);
 }); // fullpage
 
 function creatFullPage() {
@@ -730,6 +726,7 @@ function creatFullPage() {
         $('.header, .pagination, .burger').removeClass('white');
       }
 
+      var windowHeight = $('body').innerHeight();
       var windowWidth = $('body').innerWidth();
 
       if (windowWidth <= 600) {
@@ -747,6 +744,14 @@ function creatFullPage() {
           $('.header, .burger').removeClass('hide');
         }
       }
+
+      if (windowHeight < 700 && windowWidth < 520) {
+        if (index == 9) {
+          $('.header').addClass('is-hidden');
+        } else {
+          $('.header').removeClass('is-hidden');
+        }
+      }
     }
   });
 }
@@ -755,23 +760,20 @@ $(document).ready(function () {
   creatFullPage();
   var addCl = true;
   $('.js-open-hide-menu').bind('click', function () {
-    if (addCl) {
-      addCl = false;
-      $.fn.fullpage.destroy('all'); //отключаем плагим
-    } else if (!addCl) {
-      addCl = true;
-      creatFullPage();
-    }
+    $.fn.fullpage.setAutoScrolling(false);
   });
   $('.js-close-hide-menu').bind('click', function () {
-    creatFullPage();
+    $.fn.fullpage.setAutoScrolling(true);
   });
 });
 $(document).ready(function () {
   var windowHeight = $('body').innerHeight();
+  var windowWidth = $('body').innerWidth();
 
-  if (windowHeight < 700) {
+  if (windowHeight < 700 && windowWidth < 520) {
     $.fn.fullpage.setAutoScrolling(false);
+  } else {
+    $.fn.fullpage.setAutoScrolling(true);
   }
 });
 "use strict";
@@ -875,6 +877,16 @@ $(function () {
     mobileNav.classList.toggle('is-open');
     mobileLogo.classList.toggle('menu-in');
     header.classList.toggle('menu-in');
+  });
+});
+$(function () {
+  //sticky header
+  $(window).scroll(function windowScroll() {
+    if ($(this).scrollTop() > 4) {
+      $('body').addClass('sticky');
+    } else {
+      $('body').removeClass('sticky');
+    }
   });
 });
 //# sourceMappingURL=main.js.map

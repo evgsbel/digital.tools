@@ -23,7 +23,7 @@
 }
 
 @mixin height {
-  @media (max-height: (700px)) {
+  @media (max-height: (700px)) and (max-width: (560px)) {
     @content;
   }
 }

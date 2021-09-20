@@ -18,7 +18,9 @@
   @include mobile {
     grid-template-columns: repeat(6, 1fr);
   }
-
+  @media (max-width: (320px)) {
+    padding: 15px 15px 0;
+  }
   &__contacts {
     display: flex;
     align-items: center;
@@ -29,14 +31,13 @@
     @media (max-width: (1600px)) {
       font-size: 14px;
     }
-    @media (max-width: (1200px)) {
+    @media (max-width: (1280px)) {
       grid-column: 9/13;
       font-size: 12px;
     }
     @include mobile {
       display: none;
     }
-
   }
 
   &__link {

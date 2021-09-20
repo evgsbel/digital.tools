@@ -71,7 +71,7 @@
   &__item {
     flex: 1 0 14%;
     @media (max-width: (1366px)) {
-      flex-basis: 12%;
+      flex-basis: 13%;
     }
     @include mobile {
       flex: 0 0 35%;
