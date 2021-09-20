@@ -251,6 +251,18 @@ $(function () {
         dotClass: 'case__dot btn-reset',
         margin: 10
       }, "nav", false));
+      var teamSlider = $('.team-slider');
+      teamSlider.owlCarousel(_defineProperty({
+        nav: false,
+        items: 1,
+        loop: true,
+        mouseDrag: true,
+        autoplay: false,
+        smartSpeed: 1600,
+        dotsClass: 'case__dots',
+        dotClass: 'case__dot btn-reset',
+        margin: 10
+      }, "nav", false));
     } else {
       //remove slider on desktop
       $('.service__items').trigger('destroy.owl.carousel').removeClass('owl-carousel owl-theme');
@@ -269,6 +281,7 @@ $(function () {
 $(function () {
   $(window).on('load', function () {
     $('.preloader__wrp').fadeOut();
+    var windowWidth = $('body').innerWidth();
     var secHero = new TimelineMax();
     var secService = new TimelineMax();
     var secProject = new TimelineMax();
@@ -292,39 +305,74 @@ $(function () {
     }, {
       x: 0,
       opacity: 1
-    }, 0.4) // .staggerFromTo('.hero__form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
-    .staggerFromTo('.partners__item', .3, {
+    }, 0.4).staggerFromTo('.hero .form', .8, {
+      x: 30,
+      opacity: 0
+    }, {
+      x: 0,
+      opacity: 1
+    }, 0.8).staggerFromTo('.partners__item', .3, {
       x: -10,
       opacity: 0
     }, {
       x: 0,
       opacity: 1
     }, .2);
-    secService.fromTo('.service__title', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .5).staggerFromTo('.service__subtitle', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6).fromTo('.service__btn', .5, {
-      y: 20,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .6).staggerFromTo('.service__article', .3, {
-      x: -10,
-      opacity: 0
-    }, {
-      x: 0,
-      opacity: 1
-    }, .2);
+
+    if (windowWidth < 769) {
+      secService.fromTo('.service__title', .1, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .2).staggerFromTo('.service__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .2).fromTo('.service__btn', .1, {
+        y: 20,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .2).staggerFromTo('.service__article', .3, {
+        x: -10,
+        opacity: 0
+      }, {
+        x: 0,
+        opacity: 1
+      }, .1);
+    } else {
+      secService.fromTo('.service__title', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .5).staggerFromTo('.service__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .6).fromTo('.service__btn', .5, {
+        y: 20,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .6).staggerFromTo('.service__article', .3, {
+        x: -10,
+        opacity: 0
+      }, {
+        x: 0,
+        opacity: 1
+      }, .2);
+    }
+
     secProject.fromTo('.projects__title', .5, {
       y: 30,
       opacity: 0
@@ -363,39 +411,69 @@ $(function () {
       x: 0,
       opacity: 1
     }, .2);
-    secSpecialize.fromTo('.specialize__title', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .5).staggerFromTo('.specialize__subtitle', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6).fromTo('.specialize__btn', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .7).staggerFromTo('.specialize__item', .8, {
-      rotationY: -40,
-      x: -10,
-      opacity: 0
-    }, {
-      rotationY: 0,
-      x: 0,
-      opacity: 1
-    }, .5).staggerFromTo('.specialize__img', .5, {
-      scale: .5,
-      opacity: 0
-    }, {
-      scale: 1,
-      opacity: 1
-    });
+
+    if (windowWidth < 769) {
+      secSpecialize.fromTo('.specialize__title', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .5).staggerFromTo('.specialize__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .6).fromTo('.specialize__btn', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .7).staggerFromTo('.specialize__list', .3, {
+        x: -10,
+        opacity: 0
+      }, {
+        x: 0,
+        opacity: 1
+      }, .2);
+    } else {
+      secSpecialize.fromTo('.specialize__title', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .5).staggerFromTo('.specialize__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .6).fromTo('.specialize__btn', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .7).staggerFromTo('.specialize__item', .8, {
+        rotationY: -40,
+        x: -10,
+        opacity: 0
+      }, {
+        rotationY: 0,
+        x: 0,
+        opacity: 1
+      }, .5).staggerFromTo('.specialize__img', .5, {
+        scale: .5,
+        opacity: 0
+      }, {
+        scale: 1,
+        opacity: 1
+      });
+    }
+
     secSuccess.fromTo('.success__title', .5, {
       y: 30,
       opacity: 0
@@ -408,8 +486,13 @@ $(function () {
     }, {
       y: 0,
       opacity: 1
-    }, .6) // .staggerFromTo('.hero__form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
-    .staggerFromTo('.success__item', .5, {
+    }, .6).staggerFromTo('.success .form', .8, {
+      x: 30,
+      opacity: 0
+    }, {
+      x: 0,
+      opacity: 1
+    }, 0.8).staggerFromTo('.success__item', .5, {
       y: 30,
       opacity: 0
     }, {
@@ -422,64 +505,123 @@ $(function () {
       y: 0,
       opacity: 1
     }, .6);
-    secTeam.fromTo('.team__title', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .5).staggerFromTo('.team__subtitle', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6).fromTo('.team__btn', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .7).staggerFromTo('.team__img', .3, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .3).staggerFromTo('.team__name', .2, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .1);
-    secBlog.fromTo('.blog__title', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .5).staggerFromTo('.blog__subtitle', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1
-    }, .6).fromTo('.blog__btn', .5, {
-      y: 30,
-      opacity: 0
-    }, {
-      opacity: 1,
-      y: 0
-    }, .6).staggerFromTo('.blog__item', .8, {
-      rotationY: -40,
-      x: -10,
-      opacity: 0
-    }, {
-      rotationY: 0,
-      x: 0,
-      opacity: 1
-    }, .5);
+
+    if (windowWidth < 769) {
+      secTeam.fromTo('.team__title', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .5).staggerFromTo('.team__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .6).fromTo('.team__btn', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .7).staggerFromTo('.team__list', .3, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .3);
+    } else {
+      secTeam.fromTo('.team__title', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .5).staggerFromTo('.team__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .6).fromTo('.team__btn', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .7).staggerFromTo('.team__img', .3, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .3).staggerFromTo('.team__name', .2, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .1);
+    }
+
+    if (windowWidth < 769) {
+      secBlog.fromTo('.blog__title', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .5).staggerFromTo('.blog__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .6).fromTo('.blog__btn', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .6).fromTo('.blog__list', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .6);
+    } else {
+      secBlog.fromTo('.blog__title', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .5).staggerFromTo('.blog__subtitle', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1
+      }, .6).fromTo('.blog__btn', .5, {
+        y: 30,
+        opacity: 0
+      }, {
+        opacity: 1,
+        y: 0
+      }, .6).staggerFromTo('.blog__item', .8, {
+        rotationY: -40,
+        x: -10,
+        opacity: 0
+      }, {
+        rotationY: 0,
+        x: 0,
+        opacity: 1
+      }, .5);
+    }
+
     secFooter.staggerFromTo('.footer__title', 1.2, {
       x: -30,
       opacity: 0
@@ -590,11 +732,19 @@ function creatFullPage() {
 
       var windowWidth = $('body').innerWidth();
 
-      if (windowWidth < 600) {
+      if (windowWidth <= 600) {
         if (index == 1 || index == 9) {
           $('.header, .burger').addClass('left');
         } else {
           $('.header, .burger').removeClass('left');
+        }
+      }
+
+      if (windowWidth <= 600) {
+        if (index == 4) {
+          $('.header, .burger').addClass('hide');
+        } else {
+          $('.header, .burger').removeClass('hide');
         }
       }
     }
@@ -616,6 +766,13 @@ $(document).ready(function () {
   $('.js-close-hide-menu').bind('click', function () {
     creatFullPage();
   });
+});
+$(document).ready(function () {
+  var windowHeight = $('body').innerHeight();
+
+  if (windowHeight < 700) {
+    $.fn.fullpage.setAutoScrolling(false);
+  }
 });
 "use strict";
 
@@ -712,10 +869,12 @@ $(function () {
   var burger = document.querySelector('.burger');
   var mobileNav = document.querySelector('.header__nav');
   var mobileLogo = document.querySelector('.mobile-logo');
+  var header = document.querySelector('.header');
   burger.addEventListener('click', function (e) {
     e.currentTarget.classList.toggle('burger--active');
     mobileNav.classList.toggle('is-open');
     mobileLogo.classList.toggle('menu-in');
+    header.classList.toggle('menu-in');
   });
 });
 //# sourceMappingURL=main.js.map

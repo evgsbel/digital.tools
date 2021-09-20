@@ -13,6 +13,10 @@
     @include mobile {
       grid-column: 1/7;
     }
+    @include small {
+      grid-row: 1/7;
+      margin-top: 15px;
+    }
   }
   &__inner {
     @include bg-dot-right(.2);
@@ -46,6 +50,9 @@
     @media (max-width: (1600px)) {
       margin-top: 50px;
     }
+    @include small {
+      grid-row: 2/4;
+    }
   }
 }
 
@@ -75,9 +82,13 @@
       flex-basis: 100%;
       margin-left: 0;
       img {
-        max-height: 45vh;
+        max-height: 40vh;
         object-fit: cover;
+        @include small {
+          max-height: 30vh;
+        }
       }
+
     }
     &::before,
     &::after {
@@ -104,6 +115,10 @@
       margin-left: auto;
       flex: 0 1 60%;
     }
+    @include small {
+      flex-basis: 100%;
+      margin-left: 0;
+    }
   }
   .case__text {
     margin: 0;
@@ -119,6 +134,10 @@
       @media (max-width: (1367px)) {
         margin-top: 20px;
       }
+      @include small {
+        font-size: 16px;
+        line-height: 18px;
+      }
     }
     &_small {
       font-size: 12px;
@@ -127,11 +146,19 @@
     &_medium {
       font-size: 16px;
       line-height: 24px;
+      @include small {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &_tiny {
       font-size: 14px;
       line-height: 21px;
       text-transform: none;
+      @include small {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
   }
   &__counter {
@@ -166,6 +193,9 @@
     @include mobile {
       right: 0;
       bottom: 5%;
+    }
+    @include small {
+      bottom: 53%;
     }
   }
   &__dot {

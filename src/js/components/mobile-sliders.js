@@ -48,7 +48,19 @@ $(() => {
         nav: false,
       });
 
-
+      const teamSlider = $('.team-slider')
+      teamSlider.owlCarousel({
+        nav: false,
+        items: 1,
+        loop: true,
+        mouseDrag: true,
+        autoplay: false,
+        smartSpeed: 1600,
+        dotsClass: 'case__dots',
+        dotClass: 'case__dot btn-reset',
+        margin: 10,
+        nav: false,
+      });
 
     } else {
       //remove slider on desktop

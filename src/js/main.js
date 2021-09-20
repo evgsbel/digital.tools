@@ -39,11 +39,13 @@ $(() => {
   const burger = document.querySelector('.burger');
   const mobileNav = document.querySelector('.header__nav');
   const mobileLogo = document.querySelector('.mobile-logo');
+  const header = document.querySelector('.header');
 
   burger.addEventListener('click', (e) => {
     e.currentTarget.classList.toggle('burger--active');
     mobileNav.classList.toggle('is-open')
     mobileLogo.classList.toggle('menu-in')
+    header.classList.toggle('menu-in')
   });
 
 })

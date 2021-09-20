@@ -62,6 +62,10 @@
       font-size: 20px;
       line-height: 30px;
     }
+    @include mobile {
+      font-size: 40px;
+      line-height: 50px;
+    }
   }
   &__info {
     margin: 0;
@@ -69,6 +73,10 @@
     @media (max-width: (1367px)) {
       font-size: 14px;
       line-height: 20px;
+    }
+    @include mobile {
+      font-size: 16px;
+      line-height: 28px;
     }
   }
   .form {

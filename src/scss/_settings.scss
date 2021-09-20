@@ -79,6 +79,10 @@ ul {
   height: 120%;
   background-color: #fff;
   transition: transform .3s linear;
+  @include height {
+    padding-bottom: 50px;
+    height: auto;
+  }
 }
 
 .container {
@@ -97,6 +101,16 @@ ul {
     grid-column-gap: 15px;
     padding: 0 30px;
   }
+  @include height {
+    height: auto;
+  }
+}
+@include height {
+  .fp-section,
+  .fp-slide,
+  .fp-tableCell {
+    height: auto !important;
+  }
 }
 
 .inner {
@@ -110,6 +124,9 @@ ul {
   }
   @include mobile {
     grid-column: 1/7;
+  }
+  @include small {
+    padding-top: 20px;
   }
 }
 
@@ -148,6 +165,9 @@ ul {
   @media (max-width: (1440px)) {
     font-size: 40px;
     line-height: 70px;
+  }
+  @include small {
+    font-size: 30px;
   }
 
   &_white {

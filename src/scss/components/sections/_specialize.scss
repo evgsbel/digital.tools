@@ -25,7 +25,10 @@
       padding: 14px 42px;
     }
     @include mobile {
-      margin-top: 20px;
+      position: relative;
+      z-index: 100;
+      margin-top: 70px;
+      margin-left: 0;
     }
   }
   &__list {
@@ -52,6 +55,10 @@
     img {
       width: 100%;
       max-height: 100%;
+      @include small {
+        height: 100%;
+        object-fit: cover;
+      }
     }
     @media (max-width: (1600px)) {
       min-height: auto;
@@ -63,6 +70,9 @@
     @include mobile {
       max-height: 100vh;
       max-height: 100vh;
+    }
+    @include small {
+      height: 50vh;
     }
   }
 

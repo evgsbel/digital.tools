@@ -39,11 +39,17 @@
     @include mobile {
       gap: 100px;
     }
+    @include small {
+      gap: 30px;
+    }
   }
   &__item {
     flex-basis: 24%;
     @media (max-width: (1024px)) {
       flex-basis: 21%;
+    }
+    @include small {
+      flex: 0 0 30%;
     }
   }
   &__slogan {

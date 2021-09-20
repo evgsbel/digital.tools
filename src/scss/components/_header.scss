@@ -17,7 +17,6 @@
   }
   @include mobile {
     grid-template-columns: repeat(6, 1fr);
-
   }
 
   &__contacts {
@@ -65,10 +64,21 @@
   &.white {
     color: var(--color-white);
   }
+
   &.left {
-    .mobile-phone {
-      display: block;
+    @include mobile {
+      .mobile-phone {
+        display: block;
+      }
     }
+  }
+
+  &:not(.left) .mobile-logo {
+    opacity: 0;
+  }
+
+  &.menu-in .mobile-logo {
+    opacity: 1;
   }
 }
 
@@ -85,9 +95,12 @@
   justify-self: center;
   grid-column: 3/5;
   width: 90px;
+  transition: opacity .3s ease-in-out;
+
   &__icon {
     width: 30px;
   }
+
   img {
     position: absolute;
     top: 0;
@@ -117,12 +130,15 @@
       animation-delay: 8s;
     }
   }
+
   &.menu-in {
     z-index: 100;
     color: var(--color-white);
+    opacity: 1;
     transform: translateY(10px);
-    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out;
   }
+
   &__text {
     margin-left: 5px;
     padding: 0 5px;
@@ -146,9 +162,14 @@
   grid-column: 6;
   justify-self: end;
   display: none;
+
   svg {
     width: 20px;
     height: 23px;
+  }
+
+  @include mobile {
+    display: block;
   }
   @media (max-width: (600px)) {
     display: none;

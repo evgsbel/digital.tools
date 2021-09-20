@@ -5,6 +5,10 @@
   @media (max-width: (1440px)) {
     background-size: contain, cover;
   }
+  @include mobile {
+    background-position: bottom, top;
+    background-size: 100% 60%, 100% 40%;
+  }
   &__inner {
     grid-row: 2/2;
     padding-top: 123px;
@@ -13,6 +17,17 @@
     }
     @media (max-width: (1367px)) {
       padding-top: 30px;
+    }
+    @include mobile {
+      grid-row: 2/4;
+    }
+  }
+  &__wr {
+    @include mobile {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
     }
   }
   &__title {
@@ -71,6 +86,12 @@
     @media (max-width: (1024px)) {
       margin-right: 85px;
     }
+    @include mobile {
+      max-width: 100%;
+    }
+    @include small {
+      margin-right: 0;
+    }
   }
   &__map {
     position: relative;
@@ -98,6 +119,9 @@
     }
     @media (max-width: (1024px)) {
       padding: 0 67px;
+    }
+    @include mobile {
+      margin: 0;
     }
     &::after {
       content: '';
@@ -153,6 +177,9 @@
       grid-column: 2/11;
       align-self: end;
     }
+    @include mobile {
+      display: none;
+    }
     &_link {
       text-decoration: underline;
       color: var(--color-green);
@@ -161,12 +188,23 @@
   &__social {
     grid-column: 12;
     grid-row: 3;
+    @include mobile {
+      grid-column: 1/7;
+      grid-row: 4;
+      justify-self: center;
+    }
+    @include small {
+      justify-self: start;
+    }
   }
 }
 
 .footer-nav {
   justify-content: space-between;
   margin-top: 40px;
+  @include mobile {
+    display: none;
+  }
   &__caption {
     margin: 0;
     margin-bottom: 20px;

@@ -108,7 +108,7 @@
 </div>
 <!-- /preloader-->
 
-<header class="header">
+<header class="header left">
   <a href="" class="mobile-logo">
     <div class="mobile-logo__icon">
       <img src="img/m-logo-1.svg" alt="" class="">
@@ -143,6 +143,12 @@
       <a href="" class="nav__link">О нас</a>
     </li>
   </ul>
+  <div class="for-mobile">
+    <div class="mobile-contacts">
+      <a href="mailto:hello@digital.tools" class="header__link header__email">hello@digital.tools</a>
+      <a href="tel:84952408341" class="header__link header__phone">8&nbsp;(495)&nbsp;240-83-41</a>
+    </div>
+  </div>
 </nav>
 
   <div class="header__contacts">
@@ -166,6 +172,16 @@
 </div>
 
   <div class="container hide-menu__container">
+    <a href="" class="mobile-logo hide-menu__mobile-logo">
+      <div class="mobile-logo__icon">
+        <img src="img/m-logo-1.svg" alt="" class="">
+        <img src="img/m-logo-2.svg" alt="" class="">
+        <img src="img/m-logo-3.svg" alt="" class="">
+        <img src="img/m-logo-4.svg" alt="" class="">
+        <img src="img/m-logo-5.svg" alt="" class="">
+      </div>
+      <span class="mobile-logo__text">DT</span>
+    </a>
     <a href="" class="logo hide-menu__logo">
       <img src="img/logo.svg" alt="Лого Digital Tools" class="logo__img">
       <span class="logo__text">Digital.Tools</span>
@@ -391,7 +407,7 @@
     <div class="inner service__inner">
       <div class="flex ai-center">
         <h2 class="title-h2 service__title">Услуги</h2>
-        <button class="btn-reset btn service__btn">Получить консультацию</button>
+        <button class="btn-reset btn service__btn for-desktop">Получить консультацию</button>
       </div>
       <p class="subtitle service__subtitle">SEO услуги индивидуальны для каждого клиента, которые отражают именно Ваши бизнес-потребности. Получите анализ, стратегию, прогноз, план работ и&nbsp;Ключевые показатели эффективности (КПЭ) для Вашего проекта бесплатно до&nbsp;подписания с&nbsp;нами контракта.</p>
       <div class="flex service__items owl-carousel owl-theme">
@@ -441,6 +457,7 @@
           </ul>
         </article>
       </div>
+      <button class="btn-reset btn service__btn for-mobile">Получить консультацию</button>
     </div>
     <p class="slogan service__slogan">Экспертные решения</p>
   </div>
@@ -803,10 +820,11 @@
     <div class="inner team__inner">
       <div class="flex ai-center">
         <h2 class="title-h2 team__title">Команда</h2>
-        <button class="btn btn-reset team__btn">Карьера в digital.tools</button>
+        <button class="btn btn-reset team__btn for-desktop">Карьера в digital.tools</button>
       </div>
       <p class="subtitle team__subtitle">Мы стремимся к экспертному лидерству в отрасли</p>
-      <ul class="team__list flex">
+      <!-- For desktop-->
+      <ul class="team__list team__list_mobile">
         <li class="team__item">
           <img src="img/team-01.jpg" alt="Алексей Волков" class="team__img">
           <h3 class="team__name">Алексей Волков</h3>
@@ -856,7 +874,75 @@
           <h3 class="title-h3 team__name">Анастасия Никитина</h3>
         </li>
       </ul>
+      <!-- For desktop END-->
+
+      <!-- For mobile -->
+      <ul class="team__list flex for-mobile owl-theme owl-carousel team-slider">
+        <!--Item-->
+        <li class="team__slide">
+          <div class="team__item">
+            <img src="img/team-01.jpg" alt="Алексей Волков" class="team__img">
+            <h3 class="team__name">Алексей Волков</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-02.jpg" alt="Александр Бондаренко" class="team__img">
+            <h3 class="title-h3 team__name">Александр Бондаренко</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-03.jpg" alt="Никита Дмитриев" class="team__img">
+            <h3 class="title-h3 team__name">Никита Дмитриев</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-04.jpg" alt="Елена Синичкина" class="team__img">
+            <h3 class="title-h3 team__name">Елена Синичкина</h3>
+          </div>
+        </li>
+        <!--Item End-->
+        <!--Item-->
+        <li class="team__slide">
+          <div class="team__item">
+            <img src="img/team-05.jpg" alt="Ольга Дубровина" class="team__img">
+            <h3 class="team__name">Ольга Дубровина</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-06.jpg" alt="Евгений Михеев" class="team__img">
+            <h3 class="title-h3 team__name">Евгений Михеев</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-07.jpg" alt="Виктория Овчинникова" class="team__img">
+            <h3 class="title-h3 team__name">Виктория Овчинникова</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-08.jpg" alt="Виталий Колготин" class="team__img">
+            <h3 class="title-h3 team__name">Виталий Колготин</h3>
+          </div>
+        </li>
+        <!--Item End-->
+        <!--Item-->
+        <li class="team__slide">
+          <div class="team__item">
+            <img src="img/team-09.jpg" alt="Марьяна Бойцова" class="team__img">
+            <h3 class="title-h3 team__name">Марьяна Бойцова</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-010.jpg" alt="Станислав Антипов" class="team__img">
+            <h3 class="title-h3 team__name">Станислав Антипов</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-011.jpg" alt="Федор Ермоленко" class="team__img">
+            <h3 class="title-h3 team__name">Федор Ермоленко</h3>
+          </div>
+          <div class="team__item">
+            <img src="img/team-012.jpg" alt="Анастасия Никитина" class="team__img">
+            <h3 class="title-h3 team__name">Анастасия Никитина</h3>
+          </div>
+        </li>
+        <!--Item End-->
+      </ul>
+      <!-- For mobile END-->
+      <button class="btn btn-reset team__btn for-mobile">Карьера в digital.tools</button>
     </div>
+
     <p class="slogan team__slogan">DIGITAL.TOOLS</p>
   </div>
 </section>
@@ -925,9 +1011,9 @@
 
   <div class="container hero__container">
     <div class="inner  footer__inner">
-      <div class="flex">
+      <div class="flex footer__wr">
         <div class="footer__info">
-          <h1 class="title-h1 footer__title">Digital.Tools</h1>
+          <p class="title-h1 footer__title">Digital.Tools</p>
           <p class="subtitle footer__subtitle">Агенство интернет-маркетинга для роста вашего бизнеса</p>
           <p class="subtitle footer__subtitle">Привлекаем трафик и конверсии на сайты наших клиентов с 2004 года</p>
           <button class="btn footer__btn btn-reset">Заказать услугу</button>
@@ -1023,13 +1109,13 @@
         </li>
       </ul>
     </div>
-  </div>
-  <button class="btn-reset search">
+    <button class="btn-reset search">
   <svg class="search__icon">
     <use xlink:href="img/sprite.svg#icon-search"></use>
   </svg>
 </button>
 
+  </div>
 </footer>
 
 </main>

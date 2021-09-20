@@ -130,6 +130,10 @@ ul {
   height: 120%;
   background-color: #fff;
   transition: transform .3s linear; }
+  @media (max-height: 700px) {
+    .section {
+      padding-bottom: 50px;
+      height: auto; } }
 
 .container {
   position: relative;
@@ -146,6 +150,15 @@ ul {
       grid-template-columns: repeat(6, 1fr);
       grid-column-gap: 15px;
       padding: 0 30px; } }
+  @media (max-height: 700px) {
+    .container {
+      height: auto; } }
+
+@media (max-height: 700px) {
+  .fp-section,
+  .fp-slide,
+  .fp-tableCell {
+    height: auto !important; } }
 
 .inner {
   grid-column: 3/11;
@@ -159,6 +172,9 @@ ul {
   @media (max-width: 768px) {
     .inner {
       grid-column: 1/7; } }
+  @media (max-width: 600px) {
+    .inner {
+      padding-top: 20px; } }
 
 .title-h1 {
   margin: 0;
@@ -195,6 +211,9 @@ ul {
     .title-h2 {
       font-size: 40px;
       line-height: 70px; } }
+  @media (max-width: 600px) {
+    .title-h2 {
+      font-size: 30px; } }
   .title-h2_white {
     color: #fff; }
 

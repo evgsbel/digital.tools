@@ -2,6 +2,7 @@ $(() => {
   $(window).on('load', function () {
     $('.preloader__wrp').fadeOut()
 
+    let windowWidth = $('body').innerWidth()
     let secHero = new TimelineMax()
     let secService = new TimelineMax()
     let secProject = new TimelineMax()
@@ -17,15 +18,21 @@ $(() => {
     secHero
       .staggerFromTo('.hero__title', 1.2, {x: -30, opacity: 0}, {x: 0, opacity: 1}, 0.6)
       .staggerFromTo('.hero__subtitle', .5, {x: -30, opacity: 0}, {x: 0, opacity: 1}, 0.4)
-      // .staggerFromTo('.hero__form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
+      .staggerFromTo('.hero .form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
       .staggerFromTo('.partners__item', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .2)
-
-    secService
-      .fromTo('.service__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
-      .staggerFromTo('.service__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
-      .fromTo('.service__btn', .5, {y: 20, opacity: 0}, {opacity: 1, y: 0}, .6)
-      .staggerFromTo('.service__article', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .2)
-
+    if (windowWidth < 769) {
+      secService
+        .fromTo('.service__title', .1, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .2)
+        .staggerFromTo('.service__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .2)
+        .fromTo('.service__btn', .1, {y: 20, opacity: 0}, {opacity: 1, y: 0}, .2)
+        .staggerFromTo('.service__article', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .1)
+    } else {
+      secService
+        .fromTo('.service__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
+        .staggerFromTo('.service__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
+        .fromTo('.service__btn', .5, {y: 20, opacity: 0}, {opacity: 1, y: 0}, .6)
+        .staggerFromTo('.service__article', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .2)
+    }
     secProject
       .fromTo('.projects__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
       .staggerFromTo('.projects__slider', .3, {y: 30, opacity: 0}, {y: 0, opacity: 1}, 3)
@@ -35,42 +42,62 @@ $(() => {
       .staggerFromTo('.clients__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
       .fromTo('.clients__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .7)
       .staggerFromTo('.clients__item', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .2)
-
-    secSpecialize
-      .fromTo('.specialize__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
-      .staggerFromTo('.specialize__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
-      .fromTo('.specialize__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .7)
-      .staggerFromTo('.specialize__item', .8, {rotationY: -40, x: -10, opacity: 0}, {
-        rotationY: 0,
-        x: 0,
-        opacity: 1
-      }, .5)
-      .staggerFromTo('.specialize__img', .5, {scale: .5, opacity: 0}, {scale: 1, opacity: 1})
-
+    if (windowWidth < 769) {
+      secSpecialize
+        .fromTo('.specialize__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
+        .staggerFromTo('.specialize__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
+        .fromTo('.specialize__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .7)
+        .staggerFromTo('.specialize__list', .3, {x: -10, opacity: 0}, {x: 0, opacity: 1}, .2)
+    } else {
+      secSpecialize
+        .fromTo('.specialize__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
+        .staggerFromTo('.specialize__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
+        .fromTo('.specialize__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .7)
+        .staggerFromTo('.specialize__item', .8, {rotationY: -40, x: -10, opacity: 0}, {
+          rotationY: 0,
+          x: 0,
+          opacity: 1
+        }, .5)
+        .staggerFromTo('.specialize__img', .5, {scale: .5, opacity: 0}, {scale: 1, opacity: 1})
+    }
     secSuccess
       .fromTo('.success__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
       .staggerFromTo('.success__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
-      // .staggerFromTo('.hero__form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
+      .staggerFromTo('.success .form', .8, {x: 30, opacity: 0}, {x: 0, opacity: 1}, 0.8)
       .staggerFromTo('.success__item', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
       .staggerFromTo('.success__btn', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
 
-    secTeam
-      .fromTo('.team__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
-      .staggerFromTo('.team__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
-      .fromTo('.team__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .7)
-      .staggerFromTo('.team__img', .3, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .3)
-      .staggerFromTo('.team__name', .2, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .1)
-
-    secBlog
-      .fromTo('.blog__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
-      .staggerFromTo('.blog__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
-      .fromTo('.blog__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .6)
-      .staggerFromTo('.blog__item', .8, {rotationY: -40, x: -10, opacity: 0}, {
-        rotationY: 0,
-        x: 0,
-        opacity: 1
-      }, .5)
-
+    if (windowWidth < 769) {
+      secTeam
+        .fromTo('.team__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
+        .staggerFromTo('.team__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
+        .fromTo('.team__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .7)
+        .staggerFromTo('.team__list', .3, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .3)
+    } else {
+      secTeam
+        .fromTo('.team__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
+        .staggerFromTo('.team__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
+        .fromTo('.team__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .7)
+        .staggerFromTo('.team__img', .3, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .3)
+        .staggerFromTo('.team__name', .2, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .1)
+    }
+    if (windowWidth < 769) {
+      secBlog
+        .fromTo('.blog__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
+        .staggerFromTo('.blog__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
+        .fromTo('.blog__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .6)
+        .fromTo('.blog__list', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .6)
+    } else {
+      secBlog
+        .fromTo('.blog__title', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .5)
+        .staggerFromTo('.blog__subtitle', .5, {y: 30, opacity: 0}, {y: 0, opacity: 1}, .6)
+        .fromTo('.blog__btn', .5, {y: 30, opacity: 0}, {opacity: 1, y: 0}, .6)
+        .staggerFromTo('.blog__item', .8, {rotationY: -40, x: -10, opacity: 0}, {
+          rotationY: 0,
+          x: 0,
+          opacity: 1
+        }, .5)
+    }
     secFooter
       .staggerFromTo('.footer__title', 1.2, {x: -30, opacity: 0}, {x: 0, opacity: 1}, 0.6)
       .staggerFromTo('.footer__subtitle', .5, {y: -30, opacity: 0}, {y: 0, opacity: 1}, 0.4)
@@ -159,6 +186,7 @@ $(() => {
 
 // fullpage
 
+
 function creatFullPage() {
   $('#fullpage').fullpage({
     scrollingSpeed: 1000,
@@ -174,11 +202,19 @@ function creatFullPage() {
 
       let windowWidth = $('body').innerWidth()
 
-      if (windowWidth < 600) {
+      if (windowWidth <= 600) {
         if (index == 1 || index == 9) {
           $('.header, .burger').addClass('left');
         } else {
           $('.header, .burger').removeClass('left');
+        }
+      }
+
+      if (windowWidth <= 600) {
+        if (index == 4) {
+          $('.header, .burger').addClass('hide');
+        } else {
+          $('.header, .burger').removeClass('hide');
         }
       }
     }
@@ -203,6 +239,14 @@ $(document).ready(function () {
     creatFullPage();
   });
 });
+
+$(document).ready(function () {
+  let windowHeight = $('body').innerHeight()
+
+  if (windowHeight < 700) {
+    $.fn.fullpage.setAutoScrolling(false);
+  }
+})
 
 
 

@@ -15,3 +15,15 @@
     @content;
   }
 }
+
+@mixin small {
+  @media (max-width: (600px)) {
+    @content;
+  }
+}
+
+@mixin height {
+  @media (max-height: (700px)) {
+    @content;
+  }
+}
