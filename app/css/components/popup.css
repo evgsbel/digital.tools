@@ -1,14 +1,1 @@
-.popup {
-  background-color: #23252a;
-  overflow: hidden; }
-  .popup .form {
-    max-width: 100%;
-    margin: 0;
-    display: block; }
-  .popup .fancybox-close-small {
-    color: var(--color-white);
-    opacity: 1; }
-    .popup .fancybox-close-small:hover {
-      color: #cb000e; }
-
-/*# sourceMappingURL=popup.css.map */
+.popup{background-color:#23252a;overflow:hidden}.popup .form{max-width:100%;margin:0;display:block}.popup .fancybox-close-small{color:var(--color-white);opacity:1}.popup .fancybox-close-small:hover{color:#cb000e}
