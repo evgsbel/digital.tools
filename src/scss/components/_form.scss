@@ -48,6 +48,10 @@
     @media (max-width: (1024px)) {
       gap: 0 15px;
     }
+    @media (max-width: (325px)) {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
   }
   &__col {
     flex: 1 1 calc((100% / 2) - 32px);

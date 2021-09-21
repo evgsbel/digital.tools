@@ -601,6 +601,10 @@
     @media (max-width: 1024px) {
       .form__wrapper {
         gap: 0 15px; } }
+    @media (max-width: 325px) {
+      .form__wrapper {
+        flex-wrap: wrap;
+        gap: 20px; } }
   .form__col {
     flex: 1 1 calc((100% / 2) - 32px); }
     .form__col_left .form__group:not(:last-child) {
@@ -892,7 +896,8 @@
   overflow: hidden; }
   .popup .form {
     max-width: 100%;
-    margin: 0; }
+    margin: 0;
+    display: block; }
   .popup .fancybox-close-small {
     color: var(--color-white);
     opacity: 1; }
