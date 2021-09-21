@@ -307,12 +307,12 @@
 .hide-menu {
   position: fixed;
   top: 0;
+  right: -120%;
   z-index: 500;
   padding-top: 30px;
   width: 100vw;
   height: 100vh;
   background-color: #23252a;
-  right: -120%;
   transition: 1s right cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   .hide-menu__container {
     position: relative;
@@ -364,10 +364,18 @@
       .hide-menu__logo {
         grid-column: 2; } }
   .hide-menu__mobile-logo {
+    align-items: baseline;
     grid-column: 1/4;
     grid-row: 1;
-    align-items: baseline;
-    width: 100%; }
+    opacity: 0;
+    transition: 1s opacity cubic-bezier(0.25, 0.46, 0.45, 0.94), 1s transform ease-in-out; }
+    .hide-menu__mobile-logo.opened-menu {
+      -webkit-animation: showLogo 2s 1;
+      animation: showLogo 2s 1;
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards; }
   .hide-menu__close {
     z-index: 100;
     align-self: start;
@@ -383,6 +391,13 @@
         grid-column: 6;
         grid-row: 1;
         margin-top: 0; } }
+    @media (max-height: 700px) and (max-width: 560px) {
+      .hide-menu__close {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        width: 30px;
+        height: 30px; } }
     .hide-menu__close svg {
       max-width: 100%;
       max-height: 100%; }
@@ -395,6 +410,9 @@
     @media (max-width: 768px) {
       .hide-menu__nav {
         grid-column: 1/6; } }
+    @media (max-height: 700px) and (max-width: 560px) {
+      .hide-menu__nav {
+        margin-top: 50px; } }
     .hide-menu__nav.opened-menu {
       -webkit-animation: showNav 2s 1;
       animation: showNav 2s 1;
@@ -425,11 +443,18 @@
     opacity: 0;
     transform: translateY(-30%);
     transition: opacity 1s ease-in-out; }
+  @media (max-height: 700px) and (max-width: 560px) {
+    .hide-menu__item {
+      width: 100%; } }
   .hide-menu__link {
     font-weight: 700;
     font-size: 20px;
     line-height: 29px;
     transition: color .5s ease-in-out; }
+    @media (max-height: 700px) and (max-width: 560px) {
+      .hide-menu__link {
+        font-size: 16px;
+        line-height: 20px; } }
     .hide-menu__link:hover {
       text-decoration: underline;
       color: var(--color-green); }
@@ -862,6 +887,18 @@
     .footer-nav__link {
       font-size: 14px; } }
 
+.popup {
+  background-color: #23252a;
+  overflow: hidden; }
+  .popup .form {
+    max-width: 100%;
+    margin: 0; }
+  .popup .fancybox-close-small {
+    color: var(--color-white);
+    opacity: 1; }
+    .popup .fancybox-close-small:hover {
+      color: #cb000e; }
+
 .hero {
   padding: 0;
   height: 100%;
@@ -1185,7 +1222,10 @@
     z-index: 10000000;
     margin-top: 150px;
     padding: 24px 60px 19px;
-    box-shadow: none; }
+    box-shadow: none;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content; }
     @media (max-width: 1600px) {
       .projects__btn {
         margin-top: 20px; } }

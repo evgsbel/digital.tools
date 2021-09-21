@@ -1,12 +1,12 @@
 .hide-menu {
   position: fixed;
   top: 0;
+  right: -120%;
   z-index: 500;
   padding-top: 30px;
   width: 100vw;
   height: 100vh;
   background-color: #23252a;
-  right: -120%;
   transition: 1s right cubic-bezier(.25, .46, .45, .94);
 
   &__container {
@@ -34,10 +34,16 @@
   }
 
   &__mobile-logo {
+    align-items: baseline;
     grid-column: 1/4;
     grid-row: 1;
-    align-items: baseline;
-    width: 100%;
+    opacity: 0;
+    transition: 1s opacity cubic-bezier(.25, .46, .45, .94), 1s transform ease-in-out;
+    &.opened-menu {
+      animation: showLogo 2s 1;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
   }
 
   &__close {
@@ -54,6 +60,13 @@
       grid-column: 6;
       grid-row: 1;
       margin-top: 0;
+    }
+    @include height {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      width: 30px;
+      height: 30px;
     }
 
     svg {
@@ -72,6 +85,9 @@
     transition: 1s opacity cubic-bezier(.25, .46, .45, .94), 1s transform ease-in-out;
     @include mobile {
       grid-column: 1/6;
+    }
+    @include height {
+      margin-top: 50px;
     }
     &.opened-menu {
       animation: showNav 2s 1;
@@ -106,17 +122,23 @@
     transform: translateY(-30%);
     transition: opacity 1s ease-in-out;
   }
-
+  &__item {
+    @include height {
+      width: 100%;
+    }
+  }
   &__link {
     font-weight: 700;
     font-size: 20px;
     line-height: 29px;
     transition: color .5s ease-in-out;
-
+    @include height {
+      font-size: 16px;
+      line-height: 20px;
+    }
     &:hover {
       text-decoration: underline;
       color: var(--color-green);
-
       ~ .hide-menu__big-text {
         opacity: .03;
       }

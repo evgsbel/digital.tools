@@ -46,13 +46,13 @@ $(() => {
 
     $('.projects__slider').on('translate.owl.carousel', function (e) {
       let index = e.item.index;
-      $('.projects__btn').eq(index).addClass('animated animate__animated fadeInUpBig');
+      $('.projects__btn.for-desktop').eq(index).addClass('animated animate__animated fadeInUpBig');
       $('.case__img').eq(index).addClass('animated animate__animated fadeInRightBig');
       $('.case__info').eq(index).addClass('animated animate__animated fadeInLeftBig');
 
     });
 
-    $('.projects__slider').on('translated.owl.carousel', function (e) {
+    $('.projects__btn.for-desktop').on('translated.owl.carousel', function (e) {
       let index = e.item.index;
       $('.projects__btn').removeClass('animated animate__animated fadeInUpBig');
       $('.case__img').removeClass('animated animate__animated fadeInRightBig');
